@@ -1,5 +1,6 @@
 <?php
     session_start(); 
+if (isset($_SESSION['ID'] )) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +50,7 @@
 
 <?php 
   include_once('menu.php');
-  if (isset($_SESSION['ID'] )) {
+  
     require('../Controllers/cart_controller.php');
     require('../Classes/product_functions.php');
     $custID=$_SESSION["ID"];

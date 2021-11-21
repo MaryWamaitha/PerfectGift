@@ -1,5 +1,6 @@
 <?php 
-session_start();
+session_start(); 
+if (isset($_SESSION['ID'] )) {
 require('../Controllers/cart_controller.php');
 $custID = $_SESSION['ID'];
 $order_id = $_GET['order_id'];
@@ -54,6 +55,7 @@ $payment=select_payment_controller($order_id);
 </head>
 <body>
 <?php 
+
   include_once('menu.php')
 ?>
 
@@ -69,14 +71,14 @@ $payment=select_payment_controller($order_id);
                     <!-- Start .row -->
                     <div class="col-lg-6">
                         <!-- col-lg-6 start here -->
-                        <div class="invoice-logo"><img width="100" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Invoice logo"></div>
+                        <div class="invoice-logo"><img width="100" src="../images/logoperfectgift.png" alt="Invoice logo"></div>
                     </div>
                     <!-- col-lg-6 end here -->
                     <div class="col-lg-6">
                         <!-- col-lg-6 start here -->
                         <div class="invoice-from">
                             <ul class="list-unstyled text-right">
-                                <li>Lux Jade Art Collection</li>
+                                <li>The Perfect Gift</li>
                                 
                             </ul>
                         </div>
@@ -290,3 +292,8 @@ $payment=select_payment_controller($order_id);
     <script src="../JS/Template/main.js"></script>
     </body>
     </html>
+    <?php
+        } else {
+        header("Location:login.php");
+    }
+?>

@@ -56,7 +56,7 @@ class Product extends Connection{
 
 	function select_product_by_keyword($keyword){
 		// return associative array or false
-		return $this->fetch("select * from products inner join brand on brand.brand_id = products.product_brand inner join categories on categories.cat_id=products.product_cat where product_keywords like '%$keyword%' or product_desc like'%$keyword%' or product_title like '%$keyword%' or brand_name like '%$keyword%' or cat_name like '%$keyword%' ");
+		return $this->fetch("select * from products inner join brand on brand.brand_id = products.product_brand inner join categories on categories.cat_id=products.product_cat where product_keywords like '%$keyword%' or product_desc like'%$keyword%' or product_name like '%$keyword%' or brand_name like '%$keyword%' or cat_name like '%$keyword%' ");
 	}
 
 	function select_product_by_desc($desc){

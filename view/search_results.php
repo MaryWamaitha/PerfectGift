@@ -1,9 +1,6 @@
 <?php
-session_start();
-	if (isset($_SESSION['ID'] )) 
-	{
-		require('../Controllers/product_controller.php');
-		$psearch = search_product_controller($_GET['product_query']);
+require('../Controllers/product_controller.php');
+$psearch =select_product_by_keyword_controller($_GET['product_query']);
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -53,7 +50,11 @@ session_start();
 	
 </head>
 <?php 
-include_once 'menu.php';
+if (isset($_SESSION['ID'] )) {
+	include_once 'menu.php';
+} else {
+	include_once '../menu.php';
+}
 ?>
 <body class="js">
 	
@@ -101,6 +102,9 @@ include_once 'menu.php';
 									<div class="tab-single">
 										<div class="row">
 										<?php foreach ($psearch as $x){
+											$brand_name=$x['brand_name'];
+											$category_name = $x['cat_name'];
+											$productID=$x['product_id'];
 											$item_name=$x['product_name'];
 											$price=$x['product_price'];
 											$PID= $x['product_id']; 
@@ -112,22 +116,19 @@ include_once 'menu.php';
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product_details.php?id=<?php echo $PID ?>">
-															<img class="default-img" src= <?php echo $product_image ?>  alt='' height='150' width='150' alt="#">
-															<img class="hover-img" src=<?php echo $product_image ?>  alt="#">
+														<a href="product_details.php?PID=<?php echo $productID; ?>">
+															<img class="default-img" src= <?php echo $product_image ?> height="550" height="750" alt='' >
+						
 														</a>
 														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-															</div>
-															<div class="product-action-2">
-																<a title="Add to cart" href= "../Actions/cart_action.php?AddProduct=<?php echo $PID; ?>">Add to cart</a>
 															
+															<div class="product-action-2">
+																<a title="Add to cart" href= "../Actions/cart_action.php?AddProduct=<?php echo $productID; ?>">Add to cart</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product_details.php?id=<?php echo $PID ?>"><?php echo $item_name ?></a></h3>
+														<h3><a href="product_details.html"><?php echo $item_name ?></a></h3>
 														<div class="product-price">
 															<span> GHC <?php echo $price ?></span>
 														</div>
@@ -138,14 +139,7 @@ include_once 'menu.php';
 										</div>
 										
 									</div>
-								</div>
 								<!--/ End Single Tab -->
-								
-
-
-						
-		
-	
 							
 							</div>
 						</div>
@@ -158,7 +152,10 @@ include_once 'menu.php';
 	<!-- Start Midium Banner  -->
 	
 	<!-- End Midium Banner -->
-	
+	<br>
+	<br>
+	<br>
+	<br>
 	<section class="section free-version-banner">
         <div class="container">
             <div class="row align-items-center">
@@ -350,8 +347,3 @@ include_once 'menu.php';
 	<script src="../js/active.js"></script>
 </body>
 </html>
-<?php 
-} else {
-	header("Location:login.php");
-}
-	?>

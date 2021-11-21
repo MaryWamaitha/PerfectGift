@@ -1,231 +1,190 @@
 <?php
-session_start();
-	if (isset($_SESSION['ID'] )) 
-	{
-		require('../Controllers/product_controller.php');
-		$p = select_one_product_controller($_GET['id']);
-       
+
+require('../Controllers/product_Controller.php');
+
+$product = select_one_product_controller($_GET['PID']);
+$brand_name=$product['brand_name'];
+$category_name = $product['cat_name'];
+$item_name=$product['product_name'];
+$price=$product['product_price'];
+$Description=$product['product_desc'];
+$ID= $product['product_id']; 
+$images=select_images_controller($ID);
+$firstItem = reset($images);
+$product_image=$firstItem['image_path'];
+
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 <head>
-	<!-- Meta Tag -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name='copyright' content=''>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Title Tag  -->
-    <title>Perfect Gift- eCommerce HTML5 Template.</title>
-	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="../images/favicon.png">
-	<!-- Web Font -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-	
-	<!-- StyleSheet -->
-	
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="../css/bootstrap.css">
-	<!-- Magnific Popup -->
-    <link rel="stylesheet" href="../css/magnific-popup.min.css">
-	<!-- Font Awesome -->
-    <link rel="stylesheet" href="../css/font-awesome.css">
-	<!-- Fancybox -->
-	<link rel="stylesheet" href="../css/jquery.fancybox.min.css">
-	<!-- Themify Icons -->
-    <link rel="stylesheet" href="../css/themify-icons.css">
-	<!-- Nice Select CSS -->
-    <link rel="stylesheet" href="../css/niceselect.css">
-	<!-- Animate CSS -->
-    <link rel="stylesheet" href="../css/animate.css">
-	<!-- Flex Slider CSS -->
-    <link rel="stylesheet" href="../css/flex-slider.min.css">
-	<!-- Owl Carousel -->
-    <link rel="stylesheet" href="../css/owl-carousel.css">
-	<!-- Slicknav -->
-    <link rel="stylesheet" href="../css/slicknav.min.css">
-	
-	<!-- Eshop StyleSheet -->
-	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="M_Adnan">
+<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
 
-	
-	
+<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+
+<!-- Bootstrap Core CSS -->
+<link href="../css/Template/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href='../css/Template/font-awesome.min.css' rel="stylesheet" type="text/css">
+
+<link href='../css/Template/main.css' rel='stylesheet'>
+<link href='../css/Template/style.css' rel='stylesheet'>
+<link href='../css/Template/responsive.css' rel='stylesheet'>
+
+<script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
+
+<!-- JavaScripts -->
+<script src="../JS/Template/modernizr.js"></script>
+
+<!-- Online Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
+
+
+<!-- HTML5 Shim and Respond.js IE8 qsupport of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 </head>
+<body>
+
 <?php 
-include_once 'menu.php';
+if (isset($_SESSION['ID'] )) {
+	include_once 'menu.php';
+} else {
+	include_once '../menu.php';
+}
 ?>
-<body class="js">
-	
-	<!-- Preloader -->
-	<div class="preloader">
-		<div class="preloader-inner">
-			<div class="preloader-icon">
-				<span></span>
-				<span></span>
-			</div>
-		</div>
-	</div>
-	<!-- End Preloader -->
-	
-	
-	<!-- Start Product Area -->
-    <div class="product-area section">
-            <div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="section-title">
-							<h2>Generic Gifts</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="product-info">
-							<div class="nav-main">
-								<!-- Tab Nav -->
-								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<li class="nav-item"><a class="nav-link active" href="store_gifts.php" role="tab">All</a></li>
-									<li class="nav-item"><a class="nav-link"  href="generic_gifts.php" role="tab">Generic Gifts</a></li>
-									<li class="nav-item"><a class="nav-link"  href="tech_products.php" role="tab">Tech Products</a></li>
-									<li class="nav-item"><a class="nav-link"  href="sports_items.php" role="tab">Sports Items</a></li>
-									<li class="nav-item"><a class="nav-link"  href="stationary.php" role="tab">Stationary</a></li>
-								</ul>
-								<!--/ End Tab Nav -->
-							</div>
-							<!-- Getting each of the products from the database -->
-							
-							<div class="tab-content" id="myTabContent">
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade show active" id="man" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-										<?php
-											$item_name=$p['product_name'];
-											$price=$p['product_price'];
-											$PID= $p['product_id'];
-                                            $desc = $p['product_desc']; 
-											$images=select_images_controller($PID);
-											$firstItem = reset($images);
-											$product_image=$firstItem['image_path'];
-											
-										?>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product_details.php">
-															<img class="default-img" src= <?php echo $product_image ?>  alt='' height='150' width='150' alt="#">
-															<img class="hover-img" src=<?php echo $product_image ?>  alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-															</div>
-															<div class="product-action-2">
-																<a title="Add to cart" href= "../Actions/cart_action.php?AddProduct=<?php echo $PID; ?>">Add to cart</a>
-															
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product_details.php"><?php echo $item_name ?></a></h3>
-                                                        <h5><?php echo $desc ?> </h5>
-														<div class="product-price">
-															<span> GHC <?php echo $price ?></span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								
-
-
-						
-		
-	
-							
-							</div>
-						</div>
-					</div>
-				</div>
+ 
+  
+  <!-- Content -->
+  <div id="content"> 
+    
+    <!-- Popular Products -->
+    <section class="padding-top-100 padding-bottom-100">
+      <div class="container"> 
+        
+        <!-- SHOP DETAIL -->
+        <div class="shop-detail">
+          <div class="row"> 
+            
+            <!-- Popular Images Slider -->
+            <form action = "../Actions/cart_action.php" method ="get">
+            <div class="col-md-7"> 
+              <?php 
+              
+              echo "
+              <!-- Images Slider -->
+              <div class='images-slider>
+                <ul class='slides'>
+                  <li data-thumb='$product_image'> <img class='img-responsive' src='$product_image'  alt=''> </li>
+                  <input class='form-control' type='hidden'  name='ID' value='$ID'>
+                
+                </ul>
+              </div>
             </div>
-    </div>
-	<!-- End Product Area -->
-	
-	<!-- Start Midium Banner  -->
-	
-	<!-- End Midium Banner -->
-	
-	<section class="section free-version-banner">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8 offset-md-2 col-xs-12">
-                    <div class="section-title mb-60">
-                        <span class="text-white wow fadeInDown" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">Pefect Gift Shop</span>
-                        <h2 class="text-white wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"> Welcome to Perfect Gift</h2>
-                        <p class="text-white wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;"> Customers can reach a wide variety of products all in one place, and can also purchase generalised products  </p>
-
-                        <div class="button">
-                            <a href="https://wpthemesgrid.com/downloads/eshop-ecommerce-html5-template/" target="_blank" rel="nofollow" class="btn wow fadeInUp" data-wow-delay=".8s">Spread love through gifts</a>
-                        </div>
+            
+            <!-- COntent -->
+            <div class='col-md-5'>
+              <h4>$item_name</h4>
+              <span class='price'><small>KSH</small>$price</span> 
+              
+              <!-- Sale Tags -->
+              <div class='on-sale'> 10% <span>OFF</span> </div>
+              <ul class='item-owne'>
+                <li>Category :<span> $category_name</span></li>
+                <li>Brand:<span> $brand_name</span></li>
+              </ul>
+              
+              <!-- Item Detail -->
+              <p></p>
+              
+              <!-- Short By -->
+              <div class='some-info'>
+                <ul class='row margin-top-30'>
+                  <li class='col-xs-4'>
+                    <div class='quinty'> 
+                      <!-- QTY -->
+                      <select class='selectpicker' name= 'quantity' required>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                      </select>
                     </div>
+					
+                  </li> ";
+                  
+                  ?>
+                  
+                  <!-- ADD TO CART -->
+                  <li class="col-xs-6"> <button type="submit" name='cart' id ='cart' class="btn"> Add to Cart </button> </li>
+                  
+                 
+                </ul>
+            </form>
+                
+                <!-- INFOMATION -->
+                <div class="inner-info">
+                  <h6>DELIVERY INFORMATION</h6>
+                  <p>The delivery timeline will be shared with you once the order is confirmed</p>
+                  
+                  
+                
+                  <?php
+                  if (isset($_GET["error"]) && $_GET["error"]==0)
+                    echo ' <div class="alert alert-danger" role="alert"> The item was not successfully added to cart, please try again</div>' ;
+                    
+                ?>
                 </div>
-            </div>
+              
+          </div>
         </div>
-    </section>
-	<!-- Start Shop Newsletter  -->
-	<section class="shop-newsletter section">
-		<div class="container">
-			<div class="inner-top">
-				<div class="row">
-					<div class="col-lg-8 offset-lg-2 col-12">
-						<!-- Start Newsletter Inner -->
-						<div class="inner">
-							<h4>Newsletter</h4>
-							<p> Subscribe to our newsletter and get <span>latest</span> products from Perfect Gift</p>
-							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-								<input name="EMAIL" placeholder="Your email address" required="" type="email">
-								<button class="btn">Subscribe</button>
-							</form>
-						</div>
-						<!-- End Newsletter Inner -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Shop Newsletter -->
-	
-	<!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row no-gutters">
-							<div class="col-lg-6 offset-lg-3 col-12">
-								<h4 style="margin-top:100px;font-size:14px; font-weight:500; color:#F7941D; display:block; margin-bottom:5px;">Perfect Gift</h4>
-								<h3 style="font-size:30px;color:#333;"> .<h3>
-								<p style="display:block; margin-top:20px; color:#888; font-size:14px; font-weight:400;"> Customers can reach a wide variety of products all in one place, and can also purchase generalised products.</p>
-								<div class="button" style="margin-top:30px;">
-									<a href="https://wpthemesgrid.com/downloads/eshop-ecommerce-html5-template/" target="_blank" class="btn" style="color:#fff;">Buy Now!</a>
-								</div>
-							</div>
-                        </div>
-                    </div>
-                </div>
+        
+        <!--======= PRODUCT DESCRIPTION =========-->
+        <div class="item-decribe"> 
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs animate fadeInUp" data-wow-delay="0.4s" role="tablist">
+            <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab">DESCRIPTION</a></li>
+            <li role="presentation"><a href="#review" role="tab" data-toggle="tab">REVIEW (03)</a></li>
+            <li role="presentation"><a href="#tags" role="tab" data-toggle="tab">INFORMATION</a></li>
+          </ul>
+          
+          <!-- Tab panes -->
+          <div class="tab-content animate fadeInUp" data-wow-delay="0.4s"> 
+            <!-- DESCRIPTION -->
+            <div role="tabpanel" class="tab-pane fade in active" id="descr">
+               <?php echo"<p>$Description <br>"; ?>
+              </p>
+              
+          
+              
+            
             </div>
-    </div>
-    <!-- Modal end -->
-	
-	<!-- Start Footer Area -->
+         
+          </div>
+		  </div>
+        </div>
+      </div>
+    </section>
+    
+  
+    
+  
+    
+    
+  <!-- Start Footer Area -->
 	<footer class="footer">
 		<!-- Footer Top -->
 		<div class="footer-top section">
@@ -317,43 +276,22 @@ include_once 'menu.php';
 		</div>
 	</footer>
 	<!-- /End Footer Area -->
- 
-	<!-- Jquery -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery-migrate-3.0.0.js"></script>
-	<script src="../js/jquery-ui.min.js"></script>
-	<!-- Popper JS -->
-	<script src="../js/popper.min.js"></script>
-	<!-- Bootstrap JS -->
-	<script src="../js/bootstrap.min.js"></script>
-	<!-- Color JS -->
-	<script src="j../s/colors.js"></script>
-	<!-- Slicknav JS -->
-	<script src="../js/slicknav.min.js"></script>
-	<!-- Owl Carousel JS -->
-	<script src="../js/owl-carousel.js"></script>
-	<!-- Magnific Popup JS -->
-	<script src="../js/magnific-popup.js"></script>
-	<!-- Waypoints JS -->
-	<script src="../js/waypoints.min.js"></script>
-	<!-- Countdown JS -->
-	<script src="../js/finalcountdown.min.js"></script>
-	<!-- Nice Select JS -->
-	<script src="../js/nicesellect.js"></script>
-	<!-- Flex Slider JS -->
-	<script src="../js/flex-slider.js"></script>
-	<!-- ScrollUp JS -->
-	<script src="../js/scrollup.js"></script>
-	<!-- Onepage Nav JS -->
-	<script src="../js/onepage-nav.min.js"></script>
-	<!-- Easing JS -->
-	<script src="../js/easing.js"></script>
-	<!-- Active JS -->
-	<script src="../js/active.js"></script>
+  
+ <!--======= RIGHTS =========--> 
+  
+  
+</div>
+<script src="../JS/Template/jquery-1.11.3.min.js"></script> 
+<script src="../JS/Template/bootstrap.min.js"></script> 
+<script src="../JS/Template/own-menu.js"></script> 
+<script src="../JS/Template/jquery.lighter.js"></script> 
+<script src="../JS/Template/owl.carousel.min.js"></script> 
+
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
+<script type="text/javascript" src="rs-plugin/js/jquery.tp.t.min.js"></script> 
+<script type="text/javascript" src="rs-plugin/js/jquery.tp.min.js"></script> 
+<script src="../JS/Template/main.js"></script> 
+<script src="../JS/Template/main.js"></script>
+
 </body>
 </html>
-<?php 
-} else {
-	header("Location:login.php");
-}
-	?>

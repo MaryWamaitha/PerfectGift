@@ -1,9 +1,7 @@
 <?php
 session_start();
-	if (isset($_SESSION['ID'] )) 
-	{
-		require('../Controllers/product_controller.php');
-		$products = select_all_products_controller();
+require('../Controllers/product_controller.php');
+$products = select_all_products_controller();
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -54,7 +52,11 @@ session_start();
 	
 </head>
 <?php 
-include_once 'menu.php';
+if (isset($_SESSION['ID'] )) {
+	include_once 'menu.php';
+} else {
+	include_once '../menu.php';
+}
 ?>
 <body class="js">
 	
@@ -161,7 +163,7 @@ include_once 'menu.php';
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
+														<a href="product_details.php?PID=<?php echo $productID; ?>">
 															<img class="default-img" src= <?php echo $product_image ?> height="550" height="750" alt='' >
 						
 														</a>
@@ -388,8 +390,3 @@ include_once 'menu.php';
 	<script src="../js/active.js"></script>
 </body>
 </html>
-<?php 
-} else {
-	header("Location:login.php");
-}
-	?>

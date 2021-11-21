@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -81,8 +82,8 @@
 							<ul class="list-main">
 								<!-- <li><i class="ti-location-pin"></i> Store location</li> -->
 								<!-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li> -->
-								<li><i class="ti-user"></i> <a href="#"> <?php echo $_SESSION["name"]; ?> </a></li>
-								<li><i class="ti-power-off"></i><a href="login.html#">Log out</a></li>
+								<li><i class="ti-user"></i> <a href="#">User </a></li>
+								<li><i class="ti-power-off"></i><a href="login.php">Log In </a></li>
 							</ul>
 						</div>
 						<!-- End Top Right -->
@@ -116,17 +117,11 @@
 						<div class="mobile-nav"></div>
 					</div>
 					<div class="col-lg-8 col-md-7 col-12">
-						<div class="search-bar-top">
+						<div class="search-bar-top">				
 							<div class="search-bar">
-								<select>
-									<option selected="selected">All Category</option>
-									<option>watch</option>
-									<option>mobile</option>
-									<option>kid’s item</option>
-								</select>
-								<form>
-									<input name="search" placeholder="Search Products Here....." type="search">
-									<button class="btnn"><i class="ti-search"></i></button>
+								<form action ='search_results.php' method='get'>
+									<input type="text" name="product_query" id="search" placeholder="Search Products Here....." type="search">
+									<button class="btnn" type="submit"><i class="ti-search"></i></button>
 								</form>
 							</div>
 						</div>
@@ -141,19 +136,17 @@
 								<a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
 							</div>
 							<div class="sinlge-bar shopping">
-								<a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+								<a href="cart.php" class="single-icon"><i class="ti-bag"></i> </a>
 								<!-- Shopping Item -->
 								<div class="shopping-item">
 									<div class="dropdown-cart-header">
-										<!-- <span>2 Items</span> -->
-										<a href="cart.php">View Cart</a>
 									</div>
 									<div class="bottom">
 										<div class="total">
-											<span>Total</span>
-											<span class="total-amount"></span>
+											
 										</div>
-										<a href="checkout.html" class="btn animate">Checkout</a>
+										<a href="cart.php" class="btn animate">View Cart</a>
+										<a href="checkout.php" class="btn animate">Checkout</a>
 									</div>
 								</div>
 								<!--/ End Shopping Item -->
@@ -178,12 +171,12 @@
 									<div class="navbar-collapse">	
 										<div class="nav-inner">	
 											<ul class="nav main-menu menu navbar-nav">
-													<li class="active"><a href="#">Home</a></li>
+													<li class="active"><a href="loggedindex.php">Home</a></li>
 													<li><a href="#">Blog</a></li>												
 													<li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
 														<ul class="dropdown">
-															<li><a href="cart.html">Cart</a></li>
-															<li><a href="checkout.html">Checkout</a></li>
+															<li><a href="cart.php">Cart</a></li>
+															<li><a href="checkout.php">Checkout</a></li>
 														</ul>
 													</li>									
 													<li><a href="#">Blog<i class="ti-angle-down"></i></a>

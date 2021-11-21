@@ -17,11 +17,11 @@ function add_to_cart_controller($p_id,$qty,$ip_add){
 }
 
 //Quick Add
-function quick_add_controller($p_id,$ip_add,$cid,$qty){
+function quick_add_controller($p_id,$ip_add,$qty){
     // create an instance of the category class
     $cart_instance = new Cart();
     // call the method from the class
-    return $cart_instance->quick_add($p_id,$ip_add,$cid,$qty);
+    return $cart_instance->quick_add($p_id,$ip_add,$qty);
 
 
 }
