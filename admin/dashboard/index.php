@@ -123,7 +123,7 @@ $stocks = select_count_products_controller();
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./examples/register.html">
+            <a class="nav-link" href="../logout.php">
               <i class="ni ni-circle-08 text-pink"></i> Logout
             </a>
           </li>
