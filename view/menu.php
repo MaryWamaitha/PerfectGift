@@ -82,7 +82,7 @@
 								<!-- <li><i class="ti-location-pin"></i> Store location</li> -->
 								<!-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li> -->
 								<li><i class="ti-user"></i> <a href="#"> <?php echo $_SESSION["name"]; ?> </a></li>
-								<li><i class="ti-power-off"></i><a href="login.html#">Log out</a></li>
+								<li><i class="ti-power-off"></i><a href="logout.php#">Log out</a></li>
 							</ul>
 						</div>
 						<!-- End Top Right -->
