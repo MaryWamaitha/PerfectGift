@@ -241,8 +241,8 @@ include_once 'menu.php';
 					
 								
 									<div class="button5">
-										<a href="#" class="btn">Checkout</a>
-										<a href="#" class="btn">Continue shopping</a>
+										<a href="checkout.php" class="btn">Checkout</a>
+										<a href="loggedindex.php" class="btn">Continue shopping</a>
 									</div>
 									<?php } ?>
 								</div>

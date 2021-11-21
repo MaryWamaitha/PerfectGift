@@ -43,6 +43,7 @@ session_start();
     <link rel="stylesheet" href="../css/owl-carousel.css">
 	<!-- Slicknav -->
     <link rel="stylesheet" href="../css/slicknav.min.css">
+	<script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
 	
 	<!-- Eshop StyleSheet -->
 	<link rel="stylesheet" href="../css/reset.css">
@@ -160,22 +161,19 @@ include_once 'menu.php';
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product_details.php?id=<?php echo $PID ?>">
-															<img class="default-img" src= <?php echo $product_image ?>  alt='' height='150' width='150' alt="#">
-															<img class="hover-img" src=<?php echo $product_image ?>  alt="#">
+														<a href="product-details.html">
+															<img class="default-img" src= <?php echo $product_image ?> height="550" height="750" alt='' >
+						
 														</a>
 														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-															</div>
-															<div class="product-action-2">
-																<a title="Add to cart" href= "../Actions/cart_action.php?AddProduct=<?php echo $PID; ?>">Add to cart</a>
 															
+															<div class="product-action-2">
+																<a title="Add to cart" href= "../Actions/cart_action.php?AddProduct=<?php echo $productID; ?>">Add to cart</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product_details.php?id=<?php echo $PID ?>"><?php echo $item_name ?></a></h3>
+														<h3><a href="product_details.html"><?php echo $item_name ?></a></h3>
 														<div class="product-price">
 															<span> GHC <?php echo $price ?></span>
 														</div>
@@ -186,13 +184,7 @@ include_once 'menu.php';
 										</div>
 										
 									</div>
-								</div>
 								<!--/ End Single Tab -->
-								
-
-
-						
-		
 	
 							
 							</div>
@@ -203,9 +195,7 @@ include_once 'menu.php';
     </div>
 	<!-- End Product Area -->
 	
-	<!-- Start Midium Banner  -->
 	
-	<!-- End Midium Banner -->
 	
 	<section class="section free-version-banner">
         <div class="container">

@@ -1749,21 +1749,16 @@ Version:1.0
 	margin-top:50px;
 }
 .single-product .product-img {
-	width: 250;
-	height:250;
+  position: relative;
   overflow: hidden;
   cursor:pointer;
 }
 .single-product .product-img a {
-	width: 250;
-	height:250;
-	display: block;
-
+  display: block;
+  position: relative;
 }
 .single-product .product-img a img {
-  
-  width: 250;
-  height: 250;
+  width: 100%;
 }
 .single-product .product-img a img.hover-img {
   position: absolute;
