@@ -234,6 +234,10 @@ function select_category_controller($category){
     return $category_instance->select_category($category);
 
 }
+function search_product_controller($name){
+    $product_instance = new Product();
+    return $product_instance->search_product($name);
+}
 
 
 

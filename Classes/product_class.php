@@ -89,6 +89,10 @@ class Product extends Connection{
 		return $this->fetch("select * from products where product_brand='$brand'");
 	}
 
+	function search_product($name){
+		return $this->fetch("select * from products where product_name like '%$name%' or product_keywords like '%$name%'");
+	}
+
 	
 
 	
