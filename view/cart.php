@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 require('../Controllers/cart_Controller.php');
 require('../Classes/product_functions.php');
 $ip_addr = $_SERVER["REMOTE_ADDR"]; 
@@ -182,7 +183,7 @@ include_once 'menu.php';
 								$sum += $item_total;
 								echo "
 								<tr>
-								<td class='image' data-title='No'><img src='https://via.placeholder.com/100x100' alt='#'></td>
+								<td class='image' data-title='No'><img src= 'https://via.placeholder.com/100x100' alt='#'></td>
 								<td class='product-des' data-title='Description'>
 									<p class='product-name'><a href='#'></a></p>
 									<p class='product-des'>$desc</p>
@@ -226,7 +227,7 @@ include_once 'menu.php';
 								<div class="left">
 									
 									<div class="checkbox">
-										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Shipping (+10$)</label>
+										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Shipping (+500GHC)</label>
 									</div>
 								</div>
 							</div>
