@@ -252,6 +252,8 @@ $stocks = select_count_products_controller();
                    <th>Invoice No</th>
                   <th>Order Date</th>
                   <th>Status</th>
+                  <th>Update Order Status</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -266,6 +268,8 @@ $stocks = select_count_products_controller();
 					<td>{$x['invoice_no']}</td>
           <td>{$x['order_date']}</td>
           <td>{$x['order_status']}</td>
+          <td><a href='../edit_status.php?updateStatusID={$x['order_id']}'>Update</a></td>
+          
 					
 				</tr>
 				";
@@ -283,7 +287,7 @@ $stocks = select_count_products_controller();
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
             <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Perfect Gift</a>
+              &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Perfect Gift</a>
             </div>
           </div>
           <div class="col-xl-6">

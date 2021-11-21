@@ -81,7 +81,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html"><span>Logout</span></a></li>
+                            <li><a href="logout.php"><span>Logout</span></a></li>
                         </ul>
                     </nav>
                 </div>
