@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 01:13 AM
+-- Generation Time: Nov 21, 2021 at 09:01 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -24,6 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `AdminLogID` int(11) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `Password` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -59,16 +67,9 @@ CREATE TABLE `cart` (
   `p_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
   `ip_add` varchar(255) NOT NULL,
-  `qty` int(11) NOT NULL
+  `qty` int(11) NOT NULL,
+  `details` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `p_id`, `c_id`, `ip_add`, `qty`) VALUES
-(1, 20, 3, '::1', 3),
-(2, 26, 3, '::1', 2);
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,8 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`customer_id`, `customer_Fname`, `customer_Lname`, `customer_email`, `customer_pass`, `customer_contact`, `customer_address`, `role`) VALUES
 (1, 'Mary', 'Wamaitha', 'mary.wamaitha@ashesi.edu.oh', '$2y$10$XE.04Wn39Q/R8On.rVFQ1uJHGy7CR5XQ2/fD1a7pLDBLXeeDTItlK', '', '', 0),
 (2, '', '', 'mary.wamaitha@ashesi.edu.km', '$2y$10$R7vJZGgLhDkfSxm2JbbM2.bKFmkTbBNEy3LsmqVIUaLm/kvSQcm.C', '', '', 0),
-(3, 'Mary', 'Wamaitha', 'marywamaitha019@gmail.com', '$2y$10$IWz5H5DBMVoBisrJa4r9Eu1An26KlPnuVEcfSeMuF7RIEjO7bVJyW', '', '', 0);
+(3, 'Mary', 'Wamaitha', 'marywamaitha019@gmail.com', '$2y$10$IWz5H5DBMVoBisrJa4r9Eu1An26KlPnuVEcfSeMuF7RIEjO7bVJyW', '', '', 0),
+(1000, 'Mercy', 'Mukiri', 'mercy.mukiri@gmail.com', '$2y$10$dp0gaRYmhH6Kk2JyFbwyF.MIg6ZhoB8G7O5tDYDE01Q22W/QfntKy', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -180,8 +182,34 @@ INSERT INTO `image` (`image_id`, `product_id`, `image_path`) VALUES
 CREATE TABLE `orderdetails` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `qty` int(11) NOT NULL
+  `qty` int(11) NOT NULL,
+  `details` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orderdetails`
+--
+
+INSERT INTO `orderdetails` (`order_id`, `product_id`, `qty`, `details`) VALUES
+(1, 26, 2, ''),
+(1, 19, 1, ''),
+(2, 15, 1, ''),
+(2, 26, 2, ''),
+(3, 22, 1, ''),
+(3, 20, 1, ''),
+(3, 21, 2, ''),
+(4, 19, 1, ''),
+(4, 11, 1, ''),
+(5, 19, 1, ''),
+(5, 20, 1, ''),
+(6, 19, 11, ''),
+(6, 15, 4, ''),
+(7, 20, 7, ''),
+(8, 19, 2, ''),
+(9, 20, 2, ''),
+(9, 21, 1, ''),
+(11, 20, 2, 'bkjslkd'),
+(12, 26, 3, 'hjsbdkljadbskjd,f');
 
 -- --------------------------------------------------------
 
@@ -196,6 +224,24 @@ CREATE TABLE `orders` (
   `order_date` date NOT NULL,
   `order_status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `customer_id`, `invoice_no`, `order_date`, `order_status`) VALUES
+(1, 3, 876, '2021-11-20', 'pending'),
+(2, 3, 258, '2021-11-20', 'pending'),
+(3, 3, 532, '2021-11-20', 'pending'),
+(4, 3, 890, '2021-11-21', 'pending'),
+(5, 0, 493, '2021-11-21', 'pending'),
+(6, 0, 240, '2021-11-21', 'pending'),
+(7, 0, 144, '2021-11-21', 'pending'),
+(8, 0, 264, '2021-11-21', 'pending'),
+(9, 1000, 836, '2021-11-21', 'pending'),
+(10, 1000, 700, '2021-11-21', 'pending'),
+(11, 1000, 627, '2021-11-21', 'pending'),
+(12, 1000, 482, '2021-11-21', 'pending');
 
 -- --------------------------------------------------------
 
@@ -212,6 +258,23 @@ CREATE TABLE `payment` (
   `payment_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`pay_id`, `amt`, `customer_id`, `order_id`, `currency`, `payment_date`) VALUES
+(1, 9470, 3, 1, 'GHC', '2021-11-20'),
+(2, 9900, 3, 2, 'GHC', '2021-11-20'),
+(3, 1320, 3, 3, 'GHC', '2021-11-20'),
+(4, 330, 3, 4, 'GHC', '2021-11-21'),
+(5, 570, 0, 5, 'GHC', '2021-11-21'),
+(6, 5770, 0, 6, 'GHC', '2021-11-21'),
+(7, 2100, 0, 7, 'GHC', '2021-11-21'),
+(8, 540, 0, 8, 'GHC', '2021-11-21'),
+(9, 1050, 1000, 9, 'GHC', '2021-11-21'),
+(10, 600, 1000, 11, 'GHC', '2021-11-21'),
+(11, 13800, 1000, 12, 'GHC', '2021-11-21');
+
 -- --------------------------------------------------------
 
 --
@@ -226,31 +289,32 @@ CREATE TABLE `products` (
   `product_price` double NOT NULL,
   `product_desc` varchar(500) DEFAULT NULL,
   `product_colour` varchar(100) DEFAULT NULL,
-  `product_keywords` varchar(100) DEFAULT NULL
+  `product_keywords` varchar(100) DEFAULT NULL,
+  `tags` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_cat`, `product_brand`, `product_price`, `product_desc`, `product_colour`, `product_keywords`) VALUES
-(9, 'Irris Wharriris Notebook', 5, 5, 45, 'Notebook, puns, funny, gifts', '', 'Books, writing, friendship'),
-(11, 'Stay Humble', 8, 5, 60, 'White stay humble mug ', '', 'faith, coffee, busy, working'),
-(13, 'Prayer Jar', 1, 5, 35, 'Medium sized jar to keep prayers  with sticky notes', '', 'prayer, faith, gratitude, Christianity, '),
-(15, 'Food', 1, 4, 700, '555', '', 'Jars'),
-(17, 'Bad Puns Mug', 8, 6, 65, 'Coffe Mug', '', 'Coffee, Tea, Funny'),
-(18, 'Jordans', 9, 1, 200, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor'),
-(19, 'Nike Zoom', 9, 1, 270, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor'),
-(20, 'Nike Air 1', 9, 1, 300, 'Shoes, Outdoor, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor'),
-(21, 'Nike Art', 9, 1, 450, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, Art, Leather, Fashion, Cool'),
-(22, 'Exercise Sneakers', 9, 1, 120, 'Exercise, shoes, simple', '', 'Shoes, Fashion'),
-(23, 'Talk Nedry to me Bookmark', 5, 6, 10, 'Cute Bookmark', '', 'Bookmark'),
-(24, 'Write Ideas Mini Book', 5, 6, 20, 'Book, stationary', '', 'Book, stationary, notes, creativity'),
-(25, 'Best Self Book', 5, 6, 140, 'Book, stationary, reading', '', 'Books, happy, pursuit'),
-(26, 'Headphones 1', 10, 2, 4600, 'Laptop', '', 'Electronics, music, quality, fun'),
-(27, 'Headphones', 10, 3, 250, 'Headphones', '', 'Music, artist'),
-(28, 'Mac Book 5', 10, 2, 4000, 'Laptop, work, entertainment', '', 'Laptop, electronic'),
-(29, 'Macbook Pro X', 10, 2, 3000, 'Laptop, work, entertainment', '', 'laptop');
+INSERT INTO `products` (`product_id`, `product_name`, `product_cat`, `product_brand`, `product_price`, `product_desc`, `product_colour`, `product_keywords`, `tags`) VALUES
+(9, 'Irris Wharriris Notebook', 5, 5, 1, 'Notebook, puns, funny, gifts', '', 'Books, writing, friendship', ''),
+(11, 'Stay Humble', 8, 5, 1, 'White stay humble mug ', '', 'faith, coffee, busy, working', ''),
+(13, 'Prayer Jar', 1, 5, 35, 'Medium sized jar to keep prayers  with sticky notes', '', 'prayer, faith, gratitude, Christianity, ', ''),
+(15, 'Food', 1, 4, 700, '555', '', 'Jars', ''),
+(17, 'Bad Puns Mug', 8, 6, 65, 'Coffe Mug', '', 'Coffee, Tea, Funny', ''),
+(18, 'Jordans', 9, 1, 200, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor', ''),
+(19, 'Nike Zoom', 9, 1, 270, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor', ''),
+(20, 'Nike Air 1', 9, 1, 300, 'Shoes, Outdoor, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor', ''),
+(21, 'Nike Art', 9, 1, 450, 'Shoes, Outdoor, exercise, fashion', '', 'Shoes, Art, Leather, Fashion, Cool', 'tech-enthusiast'),
+(22, 'Exercise Sneakers', 9, 1, 120, 'Exercise, shoes, simple', '', 'Shoes, Fashion', ''),
+(23, 'Talk Nedry to me Bookmark', 5, 6, 10, 'Cute Bookmark', '', 'Bookmark', ''),
+(24, 'Write Ideas Mini Book', 5, 6, 20, 'Book, stationary', '', 'Book, stationary, notes, creativity', ''),
+(25, 'Best Self Book', 5, 6, 140, 'Book, stationary, reading', '', 'Books, happy, pursuit', ''),
+(26, 'Headphones 1', 10, 2, 4600, 'Laptop', '', 'Electronics, music, quality, fun', ''),
+(27, 'Headphones', 10, 3, 250, 'Headphones', '', 'Music, artist', ''),
+(28, 'Mac Book 5', 10, 2, 4000, 'Laptop, work, entertainment', '', 'Laptop, electronic', ''),
+(29, 'Macbook Pro X', 10, 2, 3000, 'Laptop, work, entertainment', '', 'laptop', '');
 
 -- --------------------------------------------------------
 
@@ -273,7 +337,9 @@ CREATE TABLE `stocks` (
 --
 -- Indexes for table `admin`
 --
-
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`AdminLogID`),
+  ADD UNIQUE KEY `AdminLogID` (`AdminLogID`);
 
 --
 -- Indexes for table `brand`
@@ -341,13 +407,19 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
 
 --
 -- AUTO_INCREMENT for table `image`
@@ -359,13 +431,13 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `products`
