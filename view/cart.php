@@ -4,8 +4,7 @@ session_start();
 require('../Controllers/cart_Controller.php');
 require('../Classes/product_functions.php');
 $ip_addr = $_SERVER["REMOTE_ADDR"]; 
-$cid=$_SESSION['ID'];
-$cart= select_cart_by_cid_controller($cid);
+$cart= select_cart_by_ip_controller($ip_addr);
 
 $cartlen=count($cart);
 $sum=0;
@@ -126,7 +125,11 @@ function loadPage(){
 <body class="js">
 	
 <?php 
-include_once 'menu.php';
+if (isset($_SESSION['ID'] )) {
+	include_once 'menu.php';
+} else {
+	include_once '../menu.php';
+}
 ?>
 	<!-- Breadcrumbs -->
 	<div class="breadcrumbs">
@@ -186,7 +189,7 @@ include_once 'menu.php';
 								<td class='image' data-title='No'><img src= 'https://via.placeholder.com/100x100' alt='#'></td>
 								<td class='product-des' data-title='Description'>
 									<p class='product-name'><a href='#'></a></p>
-									<p class='product-des'>$desc</p>
+									<p class='product-des'>$item_name</p>
 								</td>
 								<td class='price' data-title='Price'><span>GHC  $price </span></td>
 								<td class='qty' data-title'Qty'><!-- Input Order -->

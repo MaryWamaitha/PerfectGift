@@ -12,9 +12,9 @@ class Cart extends Connection{
 	}
 
 //Adds to cart when logged in
-function quick_add($p_id,$ip_add,$cid,$qty){
+function quick_add($p_id,$ip_add,$qty){
     // return true or false
-    return $this->query("insert into cart(p_id,ip_add,c_id,qty) values('$p_id','$ip_add','$cid','$qty')");
+    return $this->query("insert into cart(p_id,ip_add,qty) values('$p_id','$ip_add','$qty')");
 }
 
 //updates customer id when customer logs in

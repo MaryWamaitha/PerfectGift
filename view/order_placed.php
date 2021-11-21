@@ -54,6 +54,7 @@ $payment=select_payment_controller($order_id);
 </head>
 <body>
 <?php 
+
   include_once('menu.php')
 ?>
 
@@ -76,7 +77,7 @@ $payment=select_payment_controller($order_id);
                         <!-- col-lg-6 start here -->
                         <div class="invoice-from">
                             <ul class="list-unstyled text-right">
-                                <li>Lux Jade Art Collection</li>
+                                <li>The Perfect Gift</li>
                                 
                             </ul>
                         </div>

@@ -54,7 +54,11 @@ session_start();
 	
 </head>
 <?php 
-include_once 'menu.php';
+if (isset($_SESSION['ID'] )) {
+	include_once 'menu.php';
+} else {
+	include_once '../menu.php';
+}
 ?>
 <body class="js">
 	

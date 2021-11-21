@@ -146,6 +146,7 @@
 											
 										</div>
 										<a href="cart.php" class="btn animate">View Cart</a>
+										<a href="checkout.php" class="btn animate">Checkout</a>
 									</div>
 								</div>
 								<!--/ End Shopping Item -->

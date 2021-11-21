@@ -63,7 +63,7 @@ $qty=1;
     $product=select_product_incart_controller($PID);
     
     if(empty($product) ){
-        $result= quick_add_controller($PID,$ip_address,$CID,$qty);
+        $result= quick_add_controller($PID,$ip_address,$qty);
         if($result === true){
             $url=$_SERVER['HTTP_REFERER'];
             header("Location:$url");
