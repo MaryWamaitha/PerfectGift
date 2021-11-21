@@ -21,7 +21,7 @@ class Admin extends Connection{
 	}
 	function select_count_sales(){
 		// return array or false
-		return $this->fetchOne("select count(payment_id) as sales from payment");
+		return $this->fetchOne("select count(pay_id) as sales from payment");
 	}
 	function select_count_products(){
 		// return array or false
