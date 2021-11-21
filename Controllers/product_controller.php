@@ -218,11 +218,11 @@ function select_product_brand_controller($brand){
 
 }
 
-function select_one_product_controller($product_id){
+function select_one_product_controller($id){
     // create an instance of the category class
     $category_instance = new Product();
     // call the method from the class
-    return $category_instance->select_one_product($product_id);
+    return $category_instance->select_one_product($id);
 
 
 }

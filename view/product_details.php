@@ -3,7 +3,8 @@ session_start();
 	if (isset($_SESSION['ID'] )) 
 	{
 		require('../Controllers/product_controller.php');
-		$products = select_all_products_controller();
+		$p = select_one_product_controller($_GET['id']);
+       
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -68,52 +69,7 @@ include_once 'menu.php';
 	</div>
 	<!-- End Preloader -->
 	
-	<section class="small-banner section">
-									<div class="container-fluid">
-										<div class="row">
-										
-											<!-- Question  -->
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/question.png" alt="#">	
-												</div>
-												<h3>Take a Short & Fun Quiz</h3>
-												<p>Tell us about whom the gift is for</p>			
-											</div>
-											<!-- Gifts -->
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/gifts.png" alt="#">	
-												</div>
-												<h3> Get the perfect recommendations</h3>
-												<p>We give the best suited gift suggestions based on your answers </p>		
-											</div>
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/shoppingcart.png" alt="#">	
-												</div>
-												<h3>Order</h3>
-												<p> Make your choice and order</p>
-											</div>
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/recgif.png" alt="#">	
-												</div>
-												<h3>Share the happiness</h3>
-												<p>Get your gifts delivered at your desired location</p>		
-											</div>
-											
-										<!-- /End Single Banner  -->
-										<!-- Single Banner  -->
-									</div>
-								</div>
-								
-							<div class="container">
-									<div class="center">
-										<button> <a href="#" class="btn">Take Quiz Here</a>     </button>
-									</div>
-									</div>
-							</section>	
+	
 	<!-- Start Product Area -->
     <div class="product-area section">
             <div class="container">
@@ -145,22 +101,20 @@ include_once 'menu.php';
 								<div class="tab-pane fade show active" id="man" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-										<?php foreach ($products as $x){
-											$brand_name=$x['brand_name'];
-											$category_name = $x['cat_name'];
-											$productID=$x['product_id'];
-											$item_name=$x['product_name'];
-											$price=$x['product_price'];
-											$PID= $x['product_id']; 
+										<?php
+											$item_name=$p['product_name'];
+											$price=$p['product_price'];
+											$PID= $p['product_id'];
+                                            $desc = $p['product_desc']; 
 											$images=select_images_controller($PID);
 											$firstItem = reset($images);
 											$product_image=$firstItem['image_path'];
 											
-											?>
+										?>
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product_details.php?id=<?php echo $PID ?>">
+														<a href="product_details.php">
 															<img class="default-img" src= <?php echo $product_image ?>  alt='' height='150' width='150' alt="#">
 															<img class="hover-img" src=<?php echo $product_image ?>  alt="#">
 														</a>
@@ -175,14 +129,14 @@ include_once 'menu.php';
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product_details.php?id=<?php echo $PID ?>"><?php echo $item_name ?></a></h3>
+														<h3><a href="product_details.php"><?php echo $item_name ?></a></h3>
+                                                        <h5><?php echo $desc ?> </h5>
 														<div class="product-price">
 															<span> GHC <?php echo $price ?></span>
 														</div>
 													</div>
 												</div>
 											</div>
-											<?php }?>
 										</div>
 										
 									</div>

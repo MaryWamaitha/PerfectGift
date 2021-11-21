@@ -112,7 +112,7 @@ include_once 'menu.php';
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
+														<a href="product_details.php?id=<?php echo $PID ?>">
 															<img class="default-img" src= <?php echo $product_image ?>  alt='' height='150' width='150' alt="#">
 															<img class="hover-img" src=<?php echo $product_image ?>  alt="#">
 														</a>
@@ -127,7 +127,7 @@ include_once 'menu.php';
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product_details.html"><?php echo $item_name ?></a></h3>
+														<h3><a href="product_details.php?id=<?php echo $PID ?>"><?php echo $item_name ?></a></h3>
 														<div class="product-price">
 															<span> GHC <?php echo $price ?></span>
 														</div>
