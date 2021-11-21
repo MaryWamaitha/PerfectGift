@@ -267,7 +267,7 @@ include_once 'menu.php';
 					<div class="single-service">
 						<i class="ti-rocket"></i>
 						<h4>Free shiping</h4>
-						<p>Orders over $100</p>
+						<p>Orders over $GHC 200</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -293,7 +293,7 @@ include_once 'menu.php';
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-tag"></i>
-						<h4>Best Peice</h4>
+						<h4>Best Price</h4>
 						<p>Guaranteed price</p>
 					</div>
 					<!-- End Single Service -->
@@ -312,7 +312,7 @@ include_once 'menu.php';
 						<!-- Start Newsletter Inner -->
 						<div class="inner">
 							<h4>Newsletter</h4>
-							<p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
+							<p> Subscribe to our newsletter and get <span>latest</span> products from Perfect Gift</p>
 							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
 								<input name="EMAIL" placeholder="Your email address" required="" type="email">
 								<button class="btn">Subscribe</button>
@@ -451,10 +451,10 @@ include_once 'menu.php';
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="images/logo2.png" alt="#"></a>
+								<a href="index.html"><img src="../images/logoperfectgift.png" alt="#"></a>
 							</div>
-							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-							<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+							<p class="text">Customers can reach a wide variety of products all in one place, and can also purchase generalised products.</p>
+							<p class="call">Got Question? Call us 24/7<span><a href="tel: +233 549272053">+ 233 549272053</a></span></p>
 						</div>
 						<!-- End Single Widget -->
 					</div>
@@ -493,10 +493,10 @@ include_once 'menu.php';
 							<!-- Single Widget -->
 							<div class="contact">
 								<ul>
-									<li>NO. 342 - London Oxford Street.</li>
-									<li>012 United Kingdom.</li>
-									<li>info@eshop.com</li>
-									<li>+032 3456 7890</li>
+									<li>NO. 342 - East Legon Street.</li>
+									<li>Ghana.</li>
+									<li>pefectgift@gmail.com</li>
+									<li>+233 549272053</li>
 								</ul>
 							</div>
 							<!-- End Single Widget -->
