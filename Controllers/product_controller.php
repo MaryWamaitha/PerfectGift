@@ -176,6 +176,15 @@ function select_product_by_keyword_controller($keyword){
 
 }
 
+//perfect gift search
+function perfect_gift_controller($rship='',$age='',$gender='',$trait1='',$trait2='',$trait3='',$trait4=''){
+    // create an instance of the product class
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->perfect_gift($rship,$age,$gender,$trait1,$trait2,$trait3,$trait4);
+
+}
+
 function select_product_by_title_controller($title){
     // create an instance of the product class
     $product_instance = new Product();

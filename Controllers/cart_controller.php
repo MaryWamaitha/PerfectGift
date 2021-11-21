@@ -7,11 +7,11 @@ require('../Classes/cart_class.php');
 
 //Cart 
 //adding to cart when not logged in
-function add_to_cart_controller($p_id,$qty,$ip_add){
+function add_to_cart_controller($p_id,$qty,$ip_add,$details){
     // create an instance of the category class
     $cart_instance = new Cart();
     // call the method from the class
-    return $cart_instance->add_to_cart($p_id,$qty,$ip_add);
+    return $cart_instance->add_to_cart($p_id,$qty,$ip_add,$details);
 
 
 }
@@ -94,11 +94,11 @@ function add_order_controller($customer_id, $invoice_no, $order_date, $order_sta
     return $cart_instance->add_order($customer_id, $invoice_no, $order_date, $order_status);
 }
 
-function add_order_details_controller($order_id, $product_id, $qty){
+function add_order_details_controller($order_id, $product_id, $qty,$details){
     //create instance of the cart class
     $cart_instance = new Cart();
     //calls method from cart class
-    return $cart_instance->add_order_details($order_id, $product_id, $qty);
+    return $cart_instance->add_order_details($order_id, $product_id, $qty,$details);
 }
 
 function get_last_order_controller(){

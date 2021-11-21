@@ -43,6 +43,8 @@ if(isset($decodedResponse->data->status) && $decodedResponse->data->status === '
     $custID=$_SESSION["ID"];
     $invoice_no = floor(mt_rand(100, 1000));
     $status = 'pending';
+    
+
     //inserts the order into the order table
     $add_order = add_order_controller($custID,$invoice_no,$date,$status);
     //call controller function to insert into database
@@ -51,7 +53,8 @@ if(isset($decodedResponse->data->status) && $decodedResponse->data->status === '
         $recent_order = get_last_order_controller();
         $cart = select_cart_by_CID_controller($custID);
         foreach($cart as $x){
-            $add_OrderDetails = add_order_details_controller($recent_order['currentOrder'],$x['p_id'],$x['qty']);
+            $details=$x['details'];
+            $add_OrderDetails = add_order_details_controller($recent_order['currentOrder'],$x['p_id'],$x['qty'],$details);
         }
 
        

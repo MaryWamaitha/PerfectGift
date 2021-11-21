@@ -19,14 +19,15 @@ if(isset($_POST['pid'])&& ($_POST['new_quantity'])){
 if(isset($_GET['cart'])){
     $qty = $_GET['quantity'];
     $PID = $_GET['ID'];
+    $details = $_GET['details'];
     $ip_address = $_SERVER["REMOTE_ADDR"]; 
     
     $product=select_product_incart_controller($PID);
     
     if(empty($product) ){
-        $result= add_to_cart_controller($PID,$qty,$ip_address);
+        $result= add_to_cart_controller($PID,$qty,$ip_address,$details);
         if($result === true){
-            header("Location: ../View/loggedindex.php?qty=$qty&&PID=$PID&&alert=1");
+            header("Location: ../View/product_added.php?qty=$qty&&PID=$PID&&alert=1");
         } else {
             header("Location: ../View/product_details.php?error=0&&PID=$PID");
         }
@@ -34,7 +35,7 @@ if(isset($_GET['cart'])){
     } else {
         $quantity = $product['qty']+$qty;
         $update=update_quantity_controller($PID, $quantity);
-        header("Location: ../View/loggedindex.php.php?qty=$quantity&&PID=$PID&&alert=2");
+        header("Location: ../View/product_added.php?qty=$quantity&&PID=$PID&&alert=2");
     }
 
   

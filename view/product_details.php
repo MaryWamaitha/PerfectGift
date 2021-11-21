@@ -1,7 +1,7 @@
 <?php
 
 require('../Controllers/product_Controller.php');
-
+session_start();
 $product = select_one_product_controller($_GET['PID']);
 $brand_name=$product['brand_name'];
 $category_name = $product['cat_name'];
@@ -100,16 +100,15 @@ if (isset($_SESSION['ID'] )) {
             <div class='col-md-5'>
               <h4>$item_name</h4>
               <span class='price'><small>KSH</small>$price</span> 
-              
-              <!-- Sale Tags -->
-              <div class='on-sale'> 10% <span>OFF</span> </div>
+             
               <ul class='item-owne'>
                 <li>Category :<span> $category_name</span></li>
                 <li>Brand:<span> $brand_name</span></li>
               </ul>
               
               <!-- Item Detail -->
-              <p></p>
+			  <span class='label-input100'>Any specific requirements you would like with the package? Eg handrwitten card, specific gift bag wrapping preferences?</span>
+			  <input  type='text' name='details' placeholder='I would like...'>
               
               <!-- Short By -->
               <div class='some-info'>
@@ -120,14 +119,17 @@ if (isset($_SESSION['ID'] )) {
                       <select class='selectpicker' name= 'quantity' required>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
-                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+						<option value='5'>5</option>
+                        <option value='6'>6</option>
+                        <option value='7'>7</option>
                       </select>
                     </div>
 					
                   </li> ";
                   
                   ?>
-                  
+				 
                   <!-- ADD TO CART -->
                   <li class="col-xs-6"> <button type="submit" name='cart' id ='cart' class="btn"> Add to Cart </button> </li>
                   
@@ -145,7 +147,8 @@ if (isset($_SESSION['ID'] )) {
                   <?php
                   if (isset($_GET["error"]) && $_GET["error"]==0)
                     echo ' <div class="alert alert-danger" role="alert"> The item was not successfully added to cart, please try again</div>' ;
-                    
+                   
+					
                 ?>
                 </div>
               

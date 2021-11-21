@@ -93,7 +93,18 @@ class Product extends Connection{
 		return $this->fetch("select * from products where product_name like '%$name%' or product_keywords like '%$name%'");
 	}
 
-	
+	//Perfect Gift 
+	function perfect_gift($rship,$age,$gender,$trait1,$trait2,$trait3,$trait4){
+		return $this->fetch("select * from products inner join brand on brand.brand_id = products.product_brand inner join categories on 
+		categories.cat_id=products.product_cat where product_keywords like '%$rship%' or product_desc like'%$rship%' or product_name like 
+		'%$rship%' or brand_name like '%$rship%' or cat_name like '%$rship%'  or tags like '%$rship%' or product_keywords like '%$age%' or
+		 product_desc like'%$age%' or product_name like '%$age%' or brand_name like '%$age%' or cat_name like '%$age%' or tags like '%$age%' 
+		or product_keywords like '%$trait1%' or product_desc like'%$trait1%' or product_name like '%$trait1%' or brand_name like '%$trait1%'
+		or cat_name like '%$trait1%' or tags like '%$trait1%' or product_keywords like '%$trait2%' or product_desc like'%$trait2%' or product_name like '%$trait2%' or brand_name like '%$trait2%'
+		or cat_name like '%$trait2%' or tags like '%$trait2%' or  product_keywords like '%$trait3%' or product_desc like'%$trait3%' or product_name like '%$trait3%' or brand_name like '%$trait3%'
+		or cat_name like '%$trait3%' or tags like '%$trait3%' or  product_keywords like '%$trait4%' or product_desc like'%$trait4%' or product_name like '%$trait4%' or brand_name like '%$trait4%'
+		or cat_name like '%$trait4%' or tags like '%$trait4%'");
+	}
 
 	
 
