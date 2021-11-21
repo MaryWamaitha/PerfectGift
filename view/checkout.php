@@ -329,7 +329,7 @@ if (isset($_SESSION['ID'] )) {
 	function payWithPaystack(e) {
 		e.preventDefault();
 		let handler = PaystackPop.setup({
-			key: 'pk_test_5f8db00757a50340ea680b289aeb5beb88d52aff', // Replace with your public key
+			key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
       email: document.getElementById("email").value,
       qty: document.getElementById("qty").value,
       pid: document.getElementById("pid").value,

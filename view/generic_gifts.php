@@ -177,7 +177,7 @@ if (isset($_SESSION['ID'] )) {
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product_details.html"><?php echo $item_name ?></a></h3>
+														<h3><a href="product_details.php?PID=<?php echo $productID; ?>"><?php echo $item_name ?></a></h3>
 														<div class="product-price">
 															<span> GHC <?php echo $price ?></span>
 														</div>
