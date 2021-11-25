@@ -3,7 +3,7 @@ session_start();
 require('../Controllers/product_controller.php');
 // return array of all rows, or false (if it failed)
 $products = select_all_products_controller();
-var_dump($products);
+
 ?>
 
 <!doctype html>
