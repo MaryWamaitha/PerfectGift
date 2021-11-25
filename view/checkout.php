@@ -306,17 +306,17 @@ if (isset($_SESSION['ID'] )) {
   <!--======= RIGHTS =========--> 
   
 </div>
-<script src="../JS/Template/jquery-1.11.3.min.js"></script> 
-<script src="../JS/Template/bootstrap.min.js"></script> 
-<script src="../JS/Template/own-menu.js"></script> 
-<script src="../JS/Template/jquery.lighter.js"></script> 
-<script src="../JS/Template/owl.carousel.min.js"></script> 
+<script src="../js/Template/jquery-1.11.3.min.js"></script> 
+<script src="../js/Template/bootstrap.min.js"></script> 
+<script src="../js/Template/own-menu.js"></script> 
+<script src="../js/Template/jquery.lighter.js"></script> 
+<script src="../js/Template/owl.carousel.min.js"></script> 
 
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
 <script type="text/javascript" src="rs-plugin/js/jquery.tp.t.min.js"></script> 
 <script type="text/javascript" src="rs-plugin/js/jquery.tp.min.js"></script> 
-<script src="../JS/Template/main.js"></script> 
-<script src="../JS/Template/main.js"></script>
+<script src="../js/Template/main.js"></script> 
+<script src="../js/Template/main.js"></script>
 
 	<!-- PAYSTACK INLINE SCRIPT -->
 <script src="https://js.paystack.co/v1/inline.js"></script> 
