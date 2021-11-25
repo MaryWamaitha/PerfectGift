@@ -1,6 +1,6 @@
 <?php
 
-require('../Controllers/product_Controller.php');
+require('../Controllers/product_controller.php');
 session_start();
 $product = select_one_product_controller($_GET['PID']);
 $item_name=$product['product_name'];

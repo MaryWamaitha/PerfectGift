@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-require('../Controllers/cart_Controller.php');
+require('../Controllers/cart_controller.php');
 require('../Classes/product_functions.php');
 $ip_addr = $_SERVER["REMOTE_ADDR"]; 
 $cart= select_cart_by_ip_controller($ip_addr);

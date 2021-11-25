@@ -6,6 +6,6 @@
 define('SERVER', 'localhost');
 define('USER', 'root');
 define('DATABASE', 'perfect_gift');
-define('PASSWORD', '');
+define('PASSWORD', 'N+%/M6Cq+TQ6Z7zF');
 
 ?>
