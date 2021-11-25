@@ -10,7 +10,7 @@ if(isset($_POST['pid'])&& ($_POST['new_quantity'])){
     $result = update_quantity_controller($pid,$qty);
 
     if($result === true) header("Location: ../view/shopping_cart.php");
-    else echo "deletion failed";
+    else echo "update quantity failed";
 
 
 }

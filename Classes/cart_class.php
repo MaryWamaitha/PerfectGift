@@ -8,7 +8,7 @@ class Cart extends Connection{
 //adds to cart when not logged in
 	function add_to_cart($p_id,$qty,$ip_add,$details){
 		// return true or false
-		return $this->query("insert into cart(p_id, qty,ip_add,details) values('$p_id','$qty','$ip_add','$details')");
+		return $this->query("insert into cart(p_id,qty,ip_add,details) values('$p_id','$qty','$ip_add','$details')");
 	}
 
 //Adds to cart when logged in
@@ -92,7 +92,7 @@ function update_ID($CID,$ip_add ){
 		return $this->fetchOne("select * from orders join customers on orders.customer_id = customers.customer_id where orders.customer_id= '$CID' AND orders.order_id ='$order_id'");
 
 	}
-	
+
 	function select_images($product_id){
 		// return true or false
 			return $this->fetch("select * from image where product_id = '$product_id'");
