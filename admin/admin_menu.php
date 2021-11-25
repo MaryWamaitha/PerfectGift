@@ -100,10 +100,10 @@
 
 
 
-    <script src="../JS/admin/jquery-3.3.1.min.js"></script>
-    <script src="../JS/admin/popper.min.js"></script>
-    <script src="../JS/admin/bootstrap.min.js"></script>
-    <script src="../JS/admin/jquery.sticky.js"></script>
-    <script src="../JS/admin/main.js"></script>
+    <script src="../js/admin/jquery-3.3.1.min.js"></script>
+    <script src="../js/admin/popper.min.js"></script>
+    <script src="../js/admin/bootstrap.min.js"></script>
+    <script src="../js/admin/jquery.sticky.js"></script>
+    <script src="../js/admin/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-require('../Controllers/product_Controller.php');
+require('../Controllers/product_controller.php');
 $categories = select_all_categories_controller();
 $brands = select_all_brands_controller();
 $product = select_one_product_controller($_GET['updateProductID']);

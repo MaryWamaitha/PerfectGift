@@ -1,5 +1,5 @@
 <?php
-require('../Controllers/product_Controller.php');
+require('../Controllers/product_controller.php');
 $categories = select_all_categories_controller();
 $brands = select_all_brands_controller();
 
@@ -132,7 +132,7 @@ include_once 'admin_menu.php';
                     <input class="input100" type="text" name="kwords" id="kwords" required >
                     <br>
 
-                    <label for="keywords">Product keywords</label><br>
+                    <label for="keywords">Please enter some tags to identify product</label><br>
                     <input class="input100" type="text" name="tags" id="tags" required >
                     <br>
 

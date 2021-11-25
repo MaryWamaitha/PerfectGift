@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../Controllers/product_Controller.php');
+require('../Controllers/product_controller.php');
 // return array of all rows, or false (if it failed)
 $brands = select_all_brands_controller();
 ?>
