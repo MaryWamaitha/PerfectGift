@@ -180,11 +180,9 @@
 														</ul>
 													</li>									
 													<li><a href="blog.php">Blog<i class="ti-angle-down"></i></a>
-														<ul class="dropdown">
-															<li><a href="blog.php">Blog Single Sidebar</a></li>
-														</ul>
+														
 													</li>
-													<li><a href="contact.html">Contact Us</a></li>
+													
 												</ul>
 										</div>
 									</div>

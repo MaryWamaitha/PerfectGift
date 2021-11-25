@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     
 
     if($details==false) {
-               header("Location: ../View/login.php?error=0");
+               header("Location: ../view/login.php?error=0");
             } else {
                 $passw=$details['customer_pass'];
                 
