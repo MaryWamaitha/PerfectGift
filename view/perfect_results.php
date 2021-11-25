@@ -2,12 +2,14 @@
 require('../Controllers/product_controller.php');
 $rship = $_GET['rship'];
 $age = $_GET['age'];
-$gender = $_GET['gender'];
 $trait1 = $_GET['trait1'];
 $trait2 = $_GET['trait2'];
 $trait3 = $_GET['trait3'];
 $trait4 = $_GET['trait4'];
+$gender=$_GET['gender'];
+
 $psearch =perfect_gift_controller($rship,$age,$gender,$trait1,$trait2,$trait3,$trait4);
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -83,7 +85,7 @@ if (isset($_SESSION['ID'] )) {
 				<div class="row">
 					<div class="col-12">
 						<div class="section-title">
-							<h2>Generic Gifts</h2>
+							<h2>Here are the perfect Gifts for them</h2>
 						</div>
 					</div>
 				</div>
@@ -94,10 +96,7 @@ if (isset($_SESSION['ID'] )) {
 								<!-- Tab Nav -->
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
 									<li class="nav-item"><a class="nav-link active" href="store_gifts.php" role="tab">All</a></li>
-									<li class="nav-item"><a class="nav-link"  href="generic_gifts.php" role="tab">Generic Gifts</a></li>
-									<li class="nav-item"><a class="nav-link"  href="tech_products.php" role="tab">Tech Products</a></li>
-									<li class="nav-item"><a class="nav-link"  href="sports_items.php" role="tab">Sports Items</a></li>
-									<li class="nav-item"><a class="nav-link"  href="stationary.php" role="tab">Stationary</a></li>
+								
 								</ul>
 								<!--/ End Tab Nav -->
 							</div>
@@ -109,8 +108,7 @@ if (isset($_SESSION['ID'] )) {
 									<div class="tab-single">
 										<div class="row">
 										<?php foreach ($psearch as $x){
-											$brand_name=$x['brand_name'];
-											$category_name = $x['cat_name'];
+											
 											$productID=$x['product_id'];
 											$item_name=$x['product_name'];
 											$price=$x['product_price'];

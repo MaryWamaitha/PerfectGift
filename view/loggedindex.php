@@ -113,7 +113,7 @@ if (isset($_SESSION['ID'] )) {
 								
 							<div class="container">
 									<div class="center">
-										<button> <a href="#" class="btn">Take Quiz Here</a>     </button>
+										<button> <a href="perfect.php" class="btn">Take Quiz Here</a>     </button>
 									</div>
 									</div>
 							</section>	

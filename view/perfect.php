@@ -1,151 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="M_Adnan">
-<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+    <!-- Title Page-->
+    <title>Get the Perfect Gift</title>
 
-<!-- Bootstrap Core CSS -->
-<link href="../css/Template/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons font CSS-->
+    <link href="../vendor/perfect/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/perfect/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href='../css/Template/font-awesome.min.css' rel="stylesheet" type="text/css">
+    <!-- Vendor CSS-->
+    <link href="../vendor/perfect/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
-<link href='../css/Template/main.css' rel='stylesheet'>
-<link href='../css/Template/style.css' rel='stylesheet'>
-<link href='../css/Template/responsive.css' rel='stylesheet'>
-
-<script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
-
-<!-- JavaScripts -->
-<script src="../JS/Template/modernizr.js"></script>
-
-<!-- Online Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/perfect/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../fonts/perfect/font/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/perfect/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/perfect/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/perfect/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/perfect/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/perfect/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../css/perfect/util.css">
-	<link rel="stylesheet" type="text/css" href="../css/perfect/main.css">
-<!--===============================================================================================-->
+    <!-- Main CSS-->
+    <link href="../css/perfect/main.css" rel="stylesheet" media="all">
 </head>
+
 <body>
+	
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" >
+		
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Tell us more about them</h2>
+                    <form method="get" action="perfect_results.php">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Relationship to them</label>
+                                    <input class="input--style-4" type="text" name="rship">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Age</label>
+                                    <input class="input--style-4" type="text" name="age">
+                                </div>
+                            </div>
+                       
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"> What is their Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                           
 
+                        <div class="input-group">
+                            <label class="label">Sports Interest</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+							<select id="trait1" name ="trait1" class="form-control">
+										<option value="" trait1>Sports Interest</option>
+											<option value="not-sporty">Not-Sporty</option>
+											<option value="Basketball">Basketball</option>
+											<option value="Football">Football</option>
+										</select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+						<div class="input-group">
+                            <label class="label">Personality</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+							<select id="trait2" name ="trait2" class="form-control">
+										<option value="" personality>Personality</option>
+											<option value="extrovert">Extrovert</option>
+											<option value="introvert">Introvert</option>
+											<option value="Ambivert">Ambivert</option>
+										</select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+						<div class="input-group">
+                            <label class="label">Character</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+							<select id="trait2" name ="trait3" class="form-control">
+							<option value="" character>Character</option>
+											<option value="creative">Creative</option>
+											<option value="logical">Logical</option>
+										</select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+						<div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Anything we should keep in mind?</label>
+                                    <input class="input--style-4" type="text" name="trait4">
+                                </div>
+                            </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Get the perfect Gift</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="perfect_results.php" method ="get">
-				<span class="contact100-form-title">
-					Tell us a bit more about them and we will get the perfect gift!
-				</span>
+    <!-- Jquery JS-->
+    <script src="../vendor/perfect/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="../vendor/perfect/select2/select2.min.js"></script>
+    <script src="../vendor/perfect/datepicker/moment.min.js"></script>
+    <script src="../vendor/perfect/datepicker/daterangepicker.js"></script>
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Relationship to them ( girlifriend,best friend)</span>
-					<input class="input100" type="text" name="rship" placeholder="Please enter the relationship">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Gender</span>
-					<input class="input100" type="text" name="gender" placeholder="Gender">
-					<span class="focus-input100"></span>
-				</div>
+    <!-- Main JS-->
+    <script src="../js/perfect/global.js"></script>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Age</span>
-					<input class="input100" type="text" name="age" placeholder="Enter their age">
-					<span class="focus-input100"></span>
-				</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
-				<div class="wrap-input100 input100-select">
-					<span class="label-input100">Please select upto 3 of these to describe them</span>
-					<div>
-					<input type="checkbox" id="trait1" name="trait1" value="sporty">
-					<label for="trait1"> Sporty</label><br>
-					<input type="checkbox" id="trait2" name="trait2" value="Outdoor">
-					<label for="trait2"> Outdoor</label><br>
-					<input type="checkbox" id="trait3" name="trait3" value="Intellectual">
-					<label for="trait3"> Intellectual</label> <br>
-					<input type="checkbox" id="trait4" name="trait4" value="tech-enthusiast">
-					<label for="trait4"> Tech-enthusiast</label>
-					</div>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span>
-								Get the perfect gift
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-
-
-
-	<div id="dropDownSelect1"></div>
-
-<!--===============================================================================================-->
-	<script src="../vendor/perfect/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/perfect/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/perfect/bootstrap/js/popper.js"></script>
-	<script src="../vendor/perfect/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/perfect/select2/select2.min.js"></script>
-	<script>
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
-
-</body>
 </html>
+<!-- end document-->

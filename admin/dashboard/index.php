@@ -87,11 +87,7 @@ $stocks = select_count_products_controller();
               <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../view_products.php">
-              <i class="ni ni-planet text-blue"></i> Products
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link " href="../add_product.php">
               <i class="ni ni-bullet-list-67 text-red"></i> Add Products
@@ -99,7 +95,7 @@ $stocks = select_count_products_controller();
           </li>
           <li class="nav-item">
             <a class="nav-link " href="../edit_product.php">
-              <i class="ni ni-bullet-list-67 text-red"></i> Update Products
+              <i class="ni ni-bullet-list-67 text-red"></i> View and Edit Products
             </a>
           </li>
           <li class="nav-item">
@@ -108,8 +104,8 @@ $stocks = select_count_products_controller();
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../edit_brand.php">
-              <i class="ni ni-bullet-list-67 text-red"></i> Update Brand
+            <a class="nav-link " href="../view_brand.php">
+              <i class="ni ni-bullet-list-67 text-red"></i> View and Edit Brand
             </a>
           </li>
           <li class="nav-item">
@@ -118,8 +114,13 @@ $stocks = select_count_products_controller();
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../edit_brand.php">
-              <i class="ni ni-bullet-list-67 text-red"></i> Update Category
+            <a class="nav-link " href="../view_category.php">
+              <i class="ni ni-bullet-list-67 text-red"></i> View and Edit Category
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="../../view/loggedindex.php">
+            <i class="fas fa-users"></i> Customer View
             </a>
           </li>
           <li class="nav-item">
@@ -159,7 +160,7 @@ $stocks = select_count_products_controller();
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i class="fas fa-chart-bar"></i>
+                      <i class="fas fa-cart-arrow-down"></i>
                       </div>
                     </div>
                   </div>
@@ -172,12 +173,12 @@ $stocks = select_count_products_controller();
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Stock</h5><br><br><br>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Products</h5><br><br><br>
                       <span class="h2 font-weight-bold mb-0"><?php echo $stocks['stocks']; ?></span><br><br><br>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                        <i class="fas fa-chart-pie"></i>
+                      <i class="fab fa-product-hunt"></i>
                       </div>
                     </div>
                   </div>
@@ -213,7 +214,7 @@ $stocks = select_count_products_controller();
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                        <i class="fas fa-percent"></i>
+                      <i class="fas fa-chart-bar"></i>
                       </div>
                     </div>
                   </div>
@@ -248,7 +249,8 @@ $stocks = select_count_products_controller();
                 <thead class="thead-light">
                   <tr>
                   <th>Order ID</th>
-                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Customer Email</th>
                    <th>Invoice No</th>
                   <th>Order Date</th>
                   <th>Status</th>
@@ -264,7 +266,8 @@ $stocks = select_count_products_controller();
 				"
 				<tr>
 					<td>{$x['order_id']}</td>
-					<td>{$x['customer_id']}</td>
+					<td>{$x['customer_Fname']} {$x['customer_Lname']} </td>
+          <td>{$x['customer_email']}  </td>
 					<td>{$x['invoice_no']}</td>
           <td>{$x['order_date']}</td>
           <td>{$x['order_status']}</td>

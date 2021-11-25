@@ -9,7 +9,7 @@ class Admin extends Connection{
 	
 	function select_all_orders(){
 		// return array or false
-		return $this->fetch("select * from orders");
+		return $this->fetch("select * from orders inner join customers on orders.customer_id=customers.customer_id");
 	}
 	function select_count_orders(){
 		// return array or false
@@ -25,7 +25,7 @@ class Admin extends Connection{
 	}
 	function select_count_products(){
 		// return array or false
-		return $this->fetchOne("select count(StockID) as stocks from stocks");
+		return $this->fetchOne("select count(product_id) as stocks from products");
 	}
 
 	//updating
