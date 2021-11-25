@@ -27,15 +27,15 @@ if(isset($_GET['cart'])){
     if(empty($product) ){
         $result= add_to_cart_controller($PID,$qty,$ip_address,$details);
         if($result === true){
-            header("Location: ../View/product_added.php?qty=$qty&&PID=$PID&&alert=1");
+            header("Location: ../view/product_added.php?qty=$qty&&PID=$PID&&alert=1");
         } else {
-            header("Location: ../View/product_details.php?error=0&&PID=$PID");
+            header("Location: ../view/product_details.php?error=0&&PID=$PID");
         }
        
     } else {
         $quantity = $product['qty']+$qty;
         $update=update_quantity_controller($PID, $quantity);
-        header("Location: ../View/product_added.php?qty=$quantity&&PID=$PID&&alert=2");
+        header("Location: ../view/product_added.php?qty=$quantity&&PID=$PID&&alert=2");
     }
 
   
@@ -75,7 +75,7 @@ $qty=1;
     } else {
         $quantity = $product['qty']+$qty;
         $update=update_quantity_controller($PID, $quantity);
-        header("Location: ../View/loggedindex.php?qty=$quantity&&PID=$PID&&alert=2");
+        header("Location: ../view/loggedindex.php?qty=$quantity&&PID=$PID&&alert=2");
     }
 }
 
