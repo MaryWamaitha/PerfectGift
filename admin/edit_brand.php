@@ -79,7 +79,7 @@ include_once 'admin_menu.php';
                 <br>
                 <!--Form used to add a new skill-->
                 <form method="post" action="../Actions/brand_action.php" onSubmit="alert('When you click ok ,the brand name will be edited!')">
-                    <label for="brand">Brand Name </label><br>
+                    <label for="brand">Enter the new Brand Name</label><br>
                     <input class="input100" type="text" name="brand" id="brand" value="<?php echo $brand['brand_name'] ?>" required>
                     <br>
 
