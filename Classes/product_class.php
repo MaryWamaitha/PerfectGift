@@ -44,7 +44,7 @@ class Product extends Connection{
 		return $this->query("update products set product_cat='$category', product_brand='$brand',product_name='$title',product_price='$price',product_desc='$desc', product_keywords='$keywords' where product_id = '$product_id'");
 	}
 
-	function select_all_products(){
+	function select_products(){
 		// return array or false
 		return $this->fetch("select * from products inner join brand on brand.brand_id = products.product_brand inner join categories on categories.cat_id=products.product_cat");
 	}

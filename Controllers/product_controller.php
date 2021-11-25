@@ -164,7 +164,7 @@ function select_all_products_controller(){
     // create an instance of the product class
     $product_instance = new Product();
     // call the method from the class
-    return $product_instance->select_all_products();
+    return $product_instance->select_products();
 
 }
 
