@@ -75,7 +75,7 @@ include_once 'admin_menu.php';
 
         <div class="containerdataentry">
             <div class="wrap-dataentry">
-                <h1> Add Brand</h1>
+                <h1> Edit Brand</h1>
                 <br>
                 <!--Form used to add a new skill-->
                 <form method="post" action="../Actions/brand_action.php" onSubmit="alert('When you click ok ,the brand name will be edited!')">
