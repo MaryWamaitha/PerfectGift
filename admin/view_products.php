@@ -3,8 +3,6 @@ session_start();
 require('../Controllers/product_controller.php');
 // return array of all rows, or false (if it failed)
 $product = select_all_products_controller();
-
-var_dump($product);
 ?>
 
 <!doctype html>
@@ -84,7 +82,7 @@ include_once 'admin_menu.php';
 				"
 				<tr>
 					<td>{$x['brand_name']}</td>
-					<td>{$x['category_name']}</td>
+					<td>{$x['cat_name']}</td>
 					<td>{$x['product_name']}</td>
 					<td>{$x['product_price']}</td>
 					<td>{$x['product_desc']}</td>
