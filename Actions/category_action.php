@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../controllers/product_controller.php');
+require('../Controllers/product_controller.php');
 // check if theres a POST variable with the name 'save'
 if(isset($_POST['savecategory'])){
     // retrieve the details from the form submission
