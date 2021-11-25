@@ -94,7 +94,7 @@ $stocks = select_count_products_controller();
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../edit_product.php">
+            <a class="nav-link " href="../view_product.php">
               <i class="ni ni-bullet-list-67 text-red"></i> View and Edit Products
             </a>
           </li>
