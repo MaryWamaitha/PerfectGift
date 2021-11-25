@@ -257,7 +257,17 @@ if (isset($_SESSION['ID'] )) {
                 }else {
                    echo " <p class='all-total' id='total_1'>There are no items in your cart </p> ";}
                    ?>
+ <?php
+                                    if (isset($_GET["error"]) && $_GET["error"]==3)
+                                        echo ' <div class="alert alert-danger" role="alert">Payment was  not successfully recorded, if any deductions were made, we will be in touch soon with the refund<br></div>' ;
+                                    if (isset($_GET["error"]) && $_GET["error"]==1)
+                                        echo ' <div class="alert alert-danger" role="alert">The payment was not successfully verified, if deductions were made, we will refund<br></div>' ;
 
+                                    if (isset($_GET["error"]) && $_GET["error"]==2)
+                                        echo ' <div class="alert alert-danger" role="alert">Payment was  not successfully noted, if any deductions were made, we will be in touch soon with the refund<br></div>' ;
+                                    if (isset($_GET["error"]) && $_GET["error"]==0)
+                                        echo ' <div class="alert alert-danger" role="alert">Order was not sucessfully recorded, we will be in touch soon<br></div>' ;
+                                ?>
                     </div>
                   
               </div>
@@ -269,13 +279,7 @@ if (isset($_SESSION['ID'] )) {
     <section class="small-about padding-top-150 padding-bottom-150">
       <div class="container"> 
         
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>about PAVSHOP</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
-        </div>
-        
+      
         <!-- Social Icons -->
         <ul class="social_icons">
           <li><a href="#."><i class="icon-social-facebook"></i></a></li>
