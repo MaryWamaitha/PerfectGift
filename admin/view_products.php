@@ -3,7 +3,7 @@ session_start();
 require('../Controllers/product_controller.php');
 // return array of all rows, or false (if it failed)
 $product = select_all_products_controller();
-$category = select_all_categories_controller();
+
 
 ?>
 
@@ -77,19 +77,14 @@ include_once 'admin_menu.php';
 						  <tbody>
 			<?php
 			foreach($product as $x){
-				$brand_id=$x['product_brand'];
-				$brand = select_one_brand_controller($brand_id);
-				$brand_name=$brand['brand_name'];
-				$cat_id=$x['product_cat'];
-				$cat = select_one_category_controller($cat_id);
-				$category_name = $cat['cat_name']; 
+				
 				
 				
 				echo 
 				"
 				<tr>
-					<td>{$brand_name}</td>
-					<td>{$category_name}</td>
+					<td>{$x['brand_name']}</td>
+					<td>{$x['category_name']}</td>
 					<td>{$x['product_name']}</td>
 					<td>{$x['product_price']}</td>
 					<td>{$x['product_desc']}</td>
@@ -112,10 +107,10 @@ include_once 'admin_menu.php';
 		</div>
 	</section>
     
-	<script src="../JS/Table/jquery.min.js"></script>
-  <script src="../JS/Table/popper.js"></script>
-  <script src="../JS/Table/bootstrap.min.js"></script>
-  <script src="../JS/Table/main.js"></script>
+	<script src="../js/Table/jquery.min.js"></script>
+  <script src="../js/Table/popper.js"></script>
+  <script src="../js/Table/bootstrap.min.js"></script>
+  <script src="../js/Table/main.js"></script>
 
 	</body>
 </html>
