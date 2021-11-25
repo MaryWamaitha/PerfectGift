@@ -2,7 +2,7 @@
 session_start();
 require('../Controllers/product_controller.php');
 // return array of all rows, or false (if it failed)
-$product = select_all_products_controller();
+$products = select_all_products_controller();
 var_dump($product);
 ?>
 
@@ -75,7 +75,7 @@ include_once 'admin_menu.php';
 						  </thead>
 						  <tbody>
 			<?php
-			foreach($product as $x){
+			foreach($products as $x){
 				
 				
 				
