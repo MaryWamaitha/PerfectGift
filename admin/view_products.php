@@ -4,7 +4,7 @@ require('../Controllers/product_controller.php');
 // return array of all rows, or false (if it failed)
 $product = select_all_products_controller();
 
-
+var_dump($product);
 ?>
 
 <!doctype html>
