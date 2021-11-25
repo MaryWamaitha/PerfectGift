@@ -1,7 +1,5 @@
 <?php
 session_start();
-	if (isset($_SESSION['ID'] )) 
-	{
 		require('../Controllers/product_controller.php');
 		$products = select_all_products_controller();
 ?>
@@ -73,52 +71,7 @@ if (isset($_SESSION['ID'] )) {
 	</div>
 	<!-- End Preloader -->
 	
-	<section class="small-banner section">
-									<div class="container-fluid">
-										<div class="row">
-										
-											<!-- Question  -->
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/question.png" alt="#">	
-												</div>
-												<h3>Take a Short & Fun Quiz</h3>
-												<p>Tell us about whom the gift is for</p>			
-											</div>
-											<!-- Gifts -->
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/gifts.png" alt="#">	
-												</div>
-												<h3> Get the perfect recommendations</h3>
-												<p>We give the best suited gift suggestions based on your answers </p>		
-											</div>
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/shoppingcart.png" alt="#">	
-												</div>
-												<h3>Order</h3>
-												<p> Make your choice and order</p>
-											</div>
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/recgif.png" alt="#">	
-												</div>
-												<h3>Share the happiness</h3>
-												<p>Get your gifts delivered at your desired location</p>		
-											</div>
-											
-										<!-- /End Single Banner  -->
-										<!-- Single Banner  -->
-									</div>
-								</div>
-								
-							<div class="container">
-									<div class="center">
-										<button> <a href="#" class="btn">Take Quiz Here</a>     </button>
-									</div>
-									</div>
-							</section>	
+	
 	<!-- Start Product Area -->
     <div class="product-area section">
             <div class="container">

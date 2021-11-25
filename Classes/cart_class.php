@@ -92,6 +92,11 @@ function update_ID($CID,$ip_add ){
 		return $this->fetchOne("select * from orders join customers on orders.customer_id = customers.customer_id where orders.customer_id= '$CID' AND orders.order_id ='$order_id'");
 
 	}
+	
+	function select_images($product_id){
+		// return true or false
+			return $this->fetch("select * from image where product_id = '$product_id'");
+		}
 
 	//order owner details 
 	function select_payment($order_id){

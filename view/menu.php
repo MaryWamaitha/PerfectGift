@@ -9,7 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Title Tag  -->
-    <title>Eshop - eCommerce HTML5 Template.</title>
+    <title>Perfect Gift</title>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../images/favicon.png">
 	<!-- Web Font -->
@@ -172,16 +172,16 @@
 										<div class="nav-inner">	
 											<ul class="nav main-menu menu navbar-nav">
 													<li class="active"><a href="loggedindex.php">Home</a></li>
-													<li><a href="#">Blog</a></li>												
+													<li><a href="blog.php">Blog</a></li>												
 													<li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
 														<ul class="dropdown">
 															<li><a href="cart.php">Cart</a></li>
 															<li><a href="checkout.php">Checkout</a></li>
 														</ul>
 													</li>									
-													<li><a href="#">Blog<i class="ti-angle-down"></i></a>
+													<li><a href="blog.php">Blog<i class="ti-angle-down"></i></a>
 														<ul class="dropdown">
-															<li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
+															<li><a href="blog.php">Blog Single Sidebar</a></li>
 														</ul>
 													</li>
 													<li><a href="contact.html">Contact Us</a></li>

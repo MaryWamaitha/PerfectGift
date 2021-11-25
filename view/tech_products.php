@@ -1,7 +1,6 @@
 <?php
 session_start();
-	if (isset($_SESSION['ID'] )) 
-	{
+
 		require('../Controllers/product_controller.php');
 		$category= 'Tech Products';
 		$products = select_category_controller($category);
@@ -74,52 +73,7 @@ if (isset($_SESSION['ID'] )) {
 	</div>
 	<!-- End Preloader -->
 	
-	<section class="small-banner section">
-									<div class="container-fluid">
-										<div class="row">
-										
-											<!-- Question  -->
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/question.png" alt="#">	
-												</div>
-												<h3>Take a Short & Fun Quiz</h3>
-												<p>Tell us about whom the gift is for</p>			
-											</div>
-											<!-- Gifts -->
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/gifts.png" alt="#">	
-												</div>
-												<h3> Get the perfect recommendations</h3>
-												<p>We give the best suited gift suggestions based on your answers </p>		
-											</div>
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/shoppingcart.png" alt="#">	
-												</div>
-												<h3>Order</h3>
-												<p> Make your choice and order</p>
-											</div>
-											<div class="col-lg-4 col-md-6 col-12">
-												<div class="single-banner">
-													<img src="../images/recgif.png" alt="#">	
-												</div>
-												<h3>Share the happiness</h3>
-												<p>Get your gifts delivered at your desired location</p>		
-											</div>
-											
-										<!-- /End Single Banner  -->
-										<!-- Single Banner  -->
-									</div>
-								</div>
-								
-							<div class="container">
-									<div class="center">
-										<button> <a href="#" class="btn">Take Quiz Here</a>     </button>
-									</div>
-									</div>
-							</section>	
+	
 	<!-- Start Product Area -->
     <div class="product-area section">
             <div class="container">
@@ -136,9 +90,9 @@ if (isset($_SESSION['ID'] )) {
 							<div class="nav-main">
 								<!-- Tab Nav -->
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<li class="nav-item"><a class="nav-link active" href="store_gifts.php" role="tab">All</a></li>
+									<li class="nav-item"><a class="nav-link" href="store_gifts.php" role="tab">All</a></li>
 									<li class="nav-item"><a class="nav-link"  href="generic_gifts.php" role="tab">Generic Gifts</a></li>
-									<li class="nav-item"><a class="nav-link"  href="tech_products.php" role="tab">Tech Products</a></li>
+									<li class="nav-item"><a class="nav-link active" href="tech_products.php" role="tab">Tech Products</a></li>
 									<li class="nav-item"><a class="nav-link"  href="sports_items.php" role="tab">Sports Items</a></li>
 									<li class="nav-item"><a class="nav-link"  href="stationary.php" role="tab">Stationary</a></li>
 								</ul>
@@ -152,7 +106,7 @@ if (isset($_SESSION['ID'] )) {
 									<div class="tab-single">
 										<div class="row">
 										<?php foreach ($products as $x){
-											$brand_name=$x['brand_name'];
+										
 											$category_name = $x['cat_name'];
 											$productID=$x['product_id'];
 											$item_name=$x['product_name'];

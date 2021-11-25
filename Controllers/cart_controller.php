@@ -61,6 +61,15 @@ function select_product_incart_controller($p_id){
     return $cart_instance->select_product_incart($p_id);
 
 
+
+}
+//selecting image
+function select_images_controller($pid){
+    // create an instance of the product class
+    $product_instance = new Cart();
+    // call the method from the class
+    return $product_instance->select_images($pid);
+
 }
 
 //updating quantity

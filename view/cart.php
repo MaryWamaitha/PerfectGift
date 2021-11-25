@@ -181,12 +181,15 @@ if (isset($_SESSION['ID'] )) {
 								$item_name=$x['product_name'];
 								$price=$x['product_price'];
 								$desc=$x['product_desc'];
+								$images=select_images_controller($pid);
+								$firstItem = reset($images);
+								$product_image=$firstItem['image_path'];
 								$qty=$x['qty'];
 								$item_total=item_total($price,$qty); 
 								$sum += $item_total;
 								echo "
 								<tr>
-								<td class='image' data-title='No'><img src= 'https://via.placeholder.com/100x100' alt='#'></td>
+								<td class='image' data-title='No'><img src= '$product_image' alt='#'></td>
 								<td class='product-des' data-title='Description'>
 									<p class='product-name'><a href='#'></a></p>
 									<p class='product-des'>$item_name</p>

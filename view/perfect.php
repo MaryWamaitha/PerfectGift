@@ -113,6 +113,8 @@
                             <button class="btn btn--radius-2 btn--blue" type="submit">Get the perfect Gift</button>
                         </div>
                     </form>
+					<br>
+					<a href="store_gifts.php" ><p> Click here to get a generic gift instead </p> </a>
                 </div>
             </div>
         </div>

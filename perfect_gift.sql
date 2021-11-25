@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2021 at 09:01 PM
+-- Generation Time: Nov 25, 2021 at 10:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -298,21 +298,21 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_cat`, `product_brand`, `product_price`, `product_desc`, `product_colour`, `product_keywords`, `tags`) VALUES
-(9, 'Irris Wharriris Notebook', 5, 5, 1, 'Notebook, puns, funny, gifts', '', 'Books, writing, friendship', ''),
+(9, 'Irris Wharriris Notebook', 5, 5, 1, 'Notebook, puns, funny, gifts', '', 'Books, writing, friendship', 'food'),
 (11, 'Stay Humble', 8, 5, 1, 'White stay humble mug ', '', 'faith, coffee, busy, working', ''),
 (13, 'Prayer Jar', 1, 5, 35, 'Medium sized jar to keep prayers  with sticky notes', '', 'prayer, faith, gratitude, Christianity, ', ''),
 (15, 'Food', 1, 4, 700, '555', '', 'Jars', ''),
 (17, 'Bad Puns Mug', 8, 6, 65, 'Coffe Mug', '', 'Coffee, Tea, Funny', ''),
 (18, 'Jordans', 9, 1, 200, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor', ''),
-(19, 'Nike Zoom', 9, 1, 270, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor', ''),
+(19, 'Nike Zoom', 9, 1, 270, 'Shoes, Outdorr, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor', 'female'),
 (20, 'Nike Air 1', 9, 1, 300, 'Shoes, Outdoor, exercise, fashion', '', 'Shoes, exercise, fashionable, outdoor', ''),
 (21, 'Nike Art', 9, 1, 450, 'Shoes, Outdoor, exercise, fashion', '', 'Shoes, Art, Leather, Fashion, Cool', 'tech-enthusiast'),
 (22, 'Exercise Sneakers', 9, 1, 120, 'Exercise, shoes, simple', '', 'Shoes, Fashion', ''),
-(23, 'Talk Nedry to me Bookmark', 5, 6, 10, 'Cute Bookmark', '', 'Bookmark', ''),
+(23, 'Talk Nedry to me Bookmark', 5, 6, 10, 'Cute Bookmark', '', 'Bookmark', 'not-sporty'),
 (24, 'Write Ideas Mini Book', 5, 6, 20, 'Book, stationary', '', 'Book, stationary, notes, creativity', ''),
-(25, 'Best Self Book', 5, 6, 140, 'Book, stationary, reading', '', 'Books, happy, pursuit', ''),
+(25, 'Best Self Book', 5, 6, 140, 'Book, stationary, reading', '', 'Books, happy, pursuit', 'girlfriend,football'),
 (26, 'Headphones 1', 10, 2, 4600, 'Laptop', '', 'Electronics, music, quality, fun', ''),
-(27, 'Headphones', 10, 3, 250, 'Headphones', '', 'Music, artist', ''),
+(27, 'Headphones', 10, 3, 250, 'Headphones', '', 'Music, artist', 'creative,introvert'),
 (28, 'Mac Book 5', 10, 2, 4000, 'Laptop, work, entertainment', '', 'Laptop, electronic', ''),
 (29, 'Macbook Pro X', 10, 2, 3000, 'Laptop, work, entertainment', '', 'laptop', '');
 
