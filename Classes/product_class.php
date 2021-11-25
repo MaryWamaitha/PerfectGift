@@ -5,9 +5,9 @@ require('../Settings/connection.php');
 // inherit the methods from Connection
 class Product extends Connection{
 
-	function add_product($title,$category,$brand,$price,$desc,$colour,$keywords){
+	function add_product($title,$category,$brand,$price,$desc,$colour,$keywords,$tags){
 		// return true or false
-		return $this->query("insert into products(product_name,product_cat,product_brand,product_price,product_desc,product_colour,product_keywords) values('$title','$category','$brand','$price','$desc','$colour','$keywords')");
+		return $this->query("insert into products(product_name,product_cat,product_brand,product_price,product_desc,product_colour,product_keywords,tags) values('$title','$category','$brand','$price','$desc','$colour','$keywords','$tags')");
 	}	
 	//getting last product added
 	function get_last_product(){

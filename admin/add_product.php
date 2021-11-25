@@ -132,6 +132,10 @@ include_once 'admin_menu.php';
                     <input class="input100" type="text" name="kwords" id="kwords" required >
                     <br>
 
+                    <label for="keywords">Product keywords</label><br>
+                    <input class="input100" type="text" name="tags" id="tags" required >
+                    <br>
+
 
                     <div class="container-submit100-form-btn"></div>
                     <button class="login100-form-btn" name="saveproduct">

@@ -21,7 +21,7 @@ if(isset($_POST['signup'])){
       if($duplicate) {
         header( "Location: ../view/login.php?error=3");
        }else {
-            $result = add_customer_controller($fname, $lname, $email,$password);
+            $result = add_customer_controller($fname, $lname,$email,$password);
             // call the add_customer_controller function: return true or false
             if($result === true) {
               header("Location: ../view/login.php");

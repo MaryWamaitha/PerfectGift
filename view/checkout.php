@@ -340,7 +340,7 @@ if (isset($_SESSION['ID'] )) {
 			},
 			//sent email
 			callback: function(response){
-        window.location = `../Actions/payment_action.php?email=${document.getElementById("email").value}&amount=${document.getElementById("total").value}&reference=${response.reference}&date=${response.transaction_date}&currency=${response.currency}`
+        window.location = '../Actions/payment_action.php?email=${document.getElementById("email").value}&amount=${document.getElementById("total").value}&reference=${response.reference}&date=${response.transaction_date}&currency=${response.currency}'
 			}
 		});
 		handler.openIframe();

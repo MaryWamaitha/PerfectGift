@@ -102,11 +102,11 @@ function delete_category_controller($cat_id){
 
 
 //Product
-function add_product_controller($category,$brand,$title,$price,$desc,$image,$keywords){
+function add_product_controller($category,$brand,$title,$price,$desc,$image,$keywords,$tags){
     // create an instance of the product class
     $product_instance = new Product();
     // call the method from the class
-    return $product_instance->add_product($category,$brand,$title,$price,$desc,$image,$keywords);
+    return $product_instance->add_product($category,$brand,$title,$price,$desc,$image,$keywords,$tags);
 
 }
 
