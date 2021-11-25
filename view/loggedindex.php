@@ -170,7 +170,7 @@ if (isset($_SESSION['ID'] )) {
 														<div class="button-head">
 															
 															<div class="product-action-2">
-																<a title="Add to cart" href= "../Actions/cart_action.php?AddProduct=<?php echo $productID; ?>">Add to cart</a>
+																<a title="Add to cart" href= "../Actions/cart_action.php?AddProduct=<?php echo $productID;?>">Add to cart</a>
 															</div>
 														</div>
 													</div>

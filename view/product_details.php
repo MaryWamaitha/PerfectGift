@@ -3,8 +3,6 @@
 require('../Controllers/product_Controller.php');
 session_start();
 $product = select_one_product_controller($_GET['PID']);
-$brand_name=$product['brand_name'];
-$category_name = $product['cat_name'];
 $item_name=$product['product_name'];
 $price=$product['product_price'];
 $Description=$product['product_desc'];
