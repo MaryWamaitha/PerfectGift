@@ -64,21 +64,21 @@ if(isset($decodedResponse->data->status) && $decodedResponse->data->status === '
         if($add_Payment){
             $clearCart = clear_cart_controller($custID);
             if($clearCart){
-                header("Location: ../View/order_placed.php?order_id=".$recent_order['currentOrder']);
+                header("Location: ../view/order_placed.php?order_id=".$recent_order['currentOrder']);
             } else{
-                header("Location: ../View/checkout.php?error=2");
+                header("Location: ../view/checkout.php?error=2");
 
             }
         } else{
-            header("Location: ../View/checkout.php?error=3");
+            header("Location: ../view/checkout.php?error=3");
         }
     } else{
-        header("Location: ../View/checkout.php?error=0");
+        header("Location: ../view/checkout.php?error=0");
     }
 
 
 } else{
-    header("Location: ../View/checkout.php?error=1");;
+    header("Location: ../view/checkout.php?error=1");;
 }
 
 ?>

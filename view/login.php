@@ -32,7 +32,7 @@
                         <h2 class="form-title">Log in</h2>
                         <form method="POST" class="register-form" id="login-form" action="../Actions/login_process.php">
                         <?php
-                                    if (isset($_GET["error"]) && $_GET["error"]==2)
+                                    if (isset($_GET["error"]) && $_GET["error"]==3)
                                         echo ' <div class="alert alert-danger" role="alert">You are already registered, please log in<br></div>' ;
                                     if (isset($_GET["error"]) && $_GET["error"]==1)
                                         echo ' <div class="alert alert-danger" role="alert">Password is incorrect, please try again<br></div>' ;

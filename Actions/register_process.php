@@ -19,7 +19,7 @@ if(isset($_POST['signup'])){
       $duplicate = select_customer_email_controller($email);
       $password = password_hash($pass, PASSWORD_DEFAULT);
       if($duplicate) {
-        header( "Location: ../view/login.php?error=2");
+        header( "Location: ../view/login.php?error=3");
        }else {
             $result = add_customer_controller($fname, $lname, $email,$password);
             // call the add_customer_controller function: return true or false
