@@ -10,7 +10,7 @@ $brand = select_one_brand_controller($_GET['updateBrandID']);
 <html>
 
 <head>
-    <title>Add Brand</title>
+    <title>Edit Brand</title>
     <meta charset="UTF-8">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="../CSS/style.css">
