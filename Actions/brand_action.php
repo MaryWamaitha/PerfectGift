@@ -12,16 +12,16 @@ if(isset($_POST['savebrand'])){
     
     //Checks if any results came from the query checking duplicate and if nothing came back it means there is no duplicate
     if($duplicate) {
-    header("Location: ../Admin/add_brand.php?error=0");
+    header("Location: ../admin/add_brand.php?error=0");
     } else {
     //Adds the new brand to the database
         $result = add_brand_controller($brand);
-        //If this is successful, it redirects back to the Admin home page
+        //If this is successful, it redirects back to the admin home page
         if($result === true){
-        header("Location: ../Admin/view_brand.php");
+        header("Location: ../admin/view_brand.php");
         //if the insertion did not happen successfully, it redirects back to the admin page and shows an error
             }else {
-            header("Location: ../Admin/add_brand.php?error=1");
+            header("Location: ../admin/add_brand.php?error=1");
         } 
         //If there was a duplicate and hence the duplicate variable was not false, it redirects back to 
      }
@@ -45,7 +45,7 @@ if(isset($_POST['editbrand'])){
     $result = update_brand_controller($brand_id,$brand_name);
 
 
-    if($result === true) header("Location: ../Admin/view_brand.php");
+    if($result === true) header("Location: ../admin/view_brand.php");
     else echo "insertion failed";
 
 }
