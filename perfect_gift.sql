@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2021 at 10:27 AM
+-- Generation Time: Nov 25, 2021 at 08:13 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -65,11 +65,19 @@ INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
   `p_id` int(11) NOT NULL,
-  `c_id` int(11) NOT NULL,
+  `c_id` int(11) DEFAULT NULL,
   `ip_add` varchar(255) NOT NULL,
   `qty` int(11) NOT NULL,
-  `details` text NOT NULL
+  `details` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `p_id`, `c_id`, `ip_add`, `qty`, `details`) VALUES
+(27, 20, 1000, '::1', 2, ''),
+(28, 21, 1000, '::1', 2, '');
 
 -- --------------------------------------------------------
 
@@ -110,9 +118,9 @@ CREATE TABLE `customers` (
   `customer_Lname` varchar(100) NOT NULL,
   `customer_email` varchar(50) NOT NULL,
   `customer_pass` varchar(150) NOT NULL,
-  `customer_contact` varchar(15) NOT NULL,
-  `customer_address` varchar(255) NOT NULL,
-  `role` int(11) NOT NULL
+  `customer_contact` varchar(15) DEFAULT NULL,
+  `customer_address` varchar(255) DEFAULT NULL,
+  `role` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -123,7 +131,9 @@ INSERT INTO `customers` (`customer_id`, `customer_Fname`, `customer_Lname`, `cus
 (1, 'Mary', 'Wamaitha', 'mary.wamaitha@ashesi.edu.oh', '$2y$10$XE.04Wn39Q/R8On.rVFQ1uJHGy7CR5XQ2/fD1a7pLDBLXeeDTItlK', '', '', 0),
 (2, '', '', 'mary.wamaitha@ashesi.edu.km', '$2y$10$R7vJZGgLhDkfSxm2JbbM2.bKFmkTbBNEy3LsmqVIUaLm/kvSQcm.C', '', '', 0),
 (3, 'Mary', 'Wamaitha', 'marywamaitha019@gmail.com', '$2y$10$IWz5H5DBMVoBisrJa4r9Eu1An26KlPnuVEcfSeMuF7RIEjO7bVJyW', '', '', 0),
-(1000, 'Mercy', 'Mukiri', 'mercy.mukiri@gmail.com', '$2y$10$dp0gaRYmhH6Kk2JyFbwyF.MIg6ZhoB8G7O5tDYDE01Q22W/QfntKy', '', '', 0);
+(1000, 'Mercy', 'Mukiri', 'mercy.mukiri@gmail.com', '$2y$10$dp0gaRYmhH6Kk2JyFbwyF.MIg6ZhoB8G7O5tDYDE01Q22W/QfntKy', '', '', 0),
+(1001, 'Perfect', 'Gift', 'perfectgift@gmail.com', '$2y$10$H.tMWa6aqmk/WmCQ6DeTm.NTgcv8i7ivSzPASfU5lCogog0bGsmry', '', '', 0),
+(1002, 'Perfect', 'Gift', 'perfect.gift@gmail.com', '$2y$10$HGbvomkJrvkDdvRUpT.4WOpJdWzNYEmBvdup.KAVgZOzcp3Yahd9O', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -183,7 +193,7 @@ CREATE TABLE `orderdetails` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
-  `details` text NOT NULL
+  `details` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -209,7 +219,8 @@ INSERT INTO `orderdetails` (`order_id`, `product_id`, `qty`, `details`) VALUES
 (9, 20, 2, ''),
 (9, 21, 1, ''),
 (11, 20, 2, 'bkjslkd'),
-(12, 26, 3, 'hjsbdkljadbskjd,f');
+(12, 26, 3, 'hjsbdkljadbskjd,f'),
+(13, 11, 1, 'yellow');
 
 -- --------------------------------------------------------
 
@@ -241,7 +252,8 @@ INSERT INTO `orders` (`order_id`, `customer_id`, `invoice_no`, `order_date`, `or
 (9, 1000, 836, '2021-11-21', 'pending'),
 (10, 1000, 700, '2021-11-21', 'pending'),
 (11, 1000, 627, '2021-11-21', 'pending'),
-(12, 1000, 482, '2021-11-21', 'pending');
+(12, 1000, 482, '2021-11-21', 'pending'),
+(13, 1000, 639, '2021-11-25', 'pending');
 
 -- --------------------------------------------------------
 
@@ -273,7 +285,8 @@ INSERT INTO `payment` (`pay_id`, `amt`, `customer_id`, `order_id`, `currency`, `
 (8, 540, 0, 8, 'GHC', '2021-11-21'),
 (9, 1050, 1000, 9, 'GHC', '2021-11-21'),
 (10, 600, 1000, 11, 'GHC', '2021-11-21'),
-(11, 13800, 1000, 12, 'GHC', '2021-11-21');
+(11, 13800, 1000, 12, 'GHC', '2021-11-21'),
+(12, 1, 1000, 13, 'GHC', '2021-11-25');
 
 -- --------------------------------------------------------
 
@@ -290,7 +303,7 @@ CREATE TABLE `products` (
   `product_desc` varchar(500) DEFAULT NULL,
   `product_colour` varchar(100) DEFAULT NULL,
   `product_keywords` varchar(100) DEFAULT NULL,
-  `tags` text NOT NULL
+  `tags` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -407,7 +420,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -419,7 +432,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
 
 --
 -- AUTO_INCREMENT for table `image`
@@ -431,13 +444,13 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `products`

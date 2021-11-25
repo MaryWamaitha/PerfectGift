@@ -1,6 +1,6 @@
 <?php
 
-require('../../Settings/connection.php');
+require('connection.php');
 
 // inherit the methods from Connection
 class Admin extends Connection{
