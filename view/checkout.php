@@ -28,7 +28,7 @@ if (isset($_SESSION['ID'] )) {
 <script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
 
 <!-- JavaScripts -->
-<script src="../JS/Template/modernizr.js"></script>
+<script src="../js/Template/modernizr.js"></script>
 
 <!-- Online Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
