@@ -104,7 +104,7 @@ if(isset($_POST['editproduct'])){
     if ($add=== true){
         header("Location: ../admin/view_products.php");
             } else {
-                 header("Location: ../View/edit_product.php?error=4&updateProductID=$product_id ");
+                 header("Location: ../view/edit_product.php?error=4&updateProductID=$product_id ");
                  }
     }else{
         // File upload path
